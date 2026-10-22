@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lemify · Agentes de IA que atendem e vendem pelo WhatsApp</title>
+<meta name="description" content="Os agentes de IA do Lemify respondem em segundos, preenchem o CRM e recuperam quem sumiu. Teste grátis por 14 dias, sem cartão.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lemify · Agentes de IA que atendem e vendem pelo WhatsApp">
+<meta property="og:description" content="Os agentes de IA do Lemify respondem em segundos, preenchem o CRM e recuperam quem sumiu. Teste grátis por 14 dias, sem cartão.">
+<meta name="theme-color" content="#0B0C0A">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F9F2}
+h1,h2,h3,blockquote,.disp{font-family:'Bricolage Grotesque','Poppins',sans-serif}
+a{color:#0B0C0A}a:hover{color:#5F625B}
+.btn{transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(11,12,10,.22);filter:brightness(1.04)}
+.arr{display:inline-block;transition:transform .25s ease}
+.btn:hover .arr,.tlink:hover .arr{transform:translateX(5px)}
+.tlink{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .3s ease}
+.tlink:hover{background-size:100% 1.5px}
+.nav-link{background-image:linear-gradient(#0B0C0A,#0B0C0A);background-size:0% 2px;background-position:0 85%;background-repeat:no-repeat;transition:background-size .25s ease}
+.nav-link:hover{background-size:100% 2px}
+.lift{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(11,12,10,.14)}
+.mascot img{transition:transform .45s cubic-bezier(.3,1.5,.5,1)}
+.mascot:hover img{transform:translateY(-8px) scale(1.04)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.in{animation:fadeUp .8s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}.d4{animation-delay:.45s}.d5{animation-delay:.6s}
+.m1{animation-delay:.6s}.m2{animation-delay:1.3s}.m3{animation-delay:2.1s}.m4{animation-delay:2.8s}.m5{animation-delay:3.6s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float{animation:floaty 6s ease-in-out infinite}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{animation:marquee 36s linear infinite}
+.marquee-wrap:hover .marquee{animation-play-state:paused}
+@keyframes turn{to{transform:rotate(360deg)}}
+.turn{animation:turn 60s linear infinite}
+.faq summary{list-style:none;cursor:pointer}
+.faq summary::-webkit-details-marker{display:none}
+.faq .plus{transition:transform .25s ease}
+.faq[open] .plus{transform:rotate(45deg)}
+.faq summary:hover{color:#5F625B}
+.peek{position:absolute;z-index:0;pointer-events:none}
+.peek .bob{display:block;animation:bob 5s ease-in-out infinite}
+.peek .bob2{animation-duration:6.2s;animation-delay:-2s}
+.peek img{display:block;width:100%;height:auto;transition:transform .55s cubic-bezier(.3,1.4,.5,1)}
+.peek-host:hover .peek img,.shot:hover + .peek img{transform:translateY(-18px)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@supports (animation-timeline: view()){@keyframes rise{from{transform:translateY(60%)}to{transform:none}}.peek{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 100%}}
+.shot{position:absolute;z-index:2;background:#fff;border:1px solid #E2E4DC;border-radius:18px;overflow:hidden;box-shadow:0 24px 50px rgba(11,12,10,.14);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease}
+.shot:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(11,12,10,.2)}
+.shot img{display:block;width:100%;height:auto}
+.mk{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:#0B0C0A;color:var(--acc);font:700 14px/1 'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+@media (max-width: 900px){.collage{height:auto !important;display:flex;flex-direction:column;gap:20px}.collage .shot{position:relative !important;left:auto !important;top:auto !important;width:100% !important;max-width:520px;margin:0 auto}.collage .shot-menu,.collage .peek{display:none}}
+@media (max-width: 760px){.topnav{display:none !important}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.hbg{position:absolute;inset:0;pointer-events:none;z-index:0}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(247,249,242,.16) 1px,transparent 1.4px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 55% 60% at 22% 45%,#000 10%,transparent 72%);mask-image:radial-gradient(ellipse 55% 60% at 22% 45%,#000 10%,transparent 72%)}
+.grain{position:absolute;inset:0;opacity:.13;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (max-width: 760px){.deco{display:none}}
+/* ===== v2 ===== */
+.hv{position:relative;max-width:1240px;margin:56px auto 0;height:620px}
+.nav-d{color:#F7F9F2;background-image:linear-gradient(#F7F9F2,#F7F9F2)}
+.nav-d:hover{color:#C3C6BD}
+@media (max-width: 560px){.hdr-sub,.hdr-in{display:none !important}}
+/* ===== fundo interativo do topo ===== */
+#topo .hx{pointer-events:none}
+#topo .hx a,#topo .hx .hv-shot,#topo .hx .phone,#topo .hx .hcard{pointer-events:auto}
+#topo .hbg .gx{pointer-events:auto}
+.gx{position:absolute;left:50%;top:0;display:grid;-webkit-mask-image:radial-gradient(ellipse 62% 70% at 50% 34%,#000 35%,transparent 92%);mask-image:radial-gradient(ellipse 62% 70% at 50% 34%,#000 35%,transparent 92%)}
+.gx i{display:block;position:relative}
+
+.gx.gc{width:2240px;margin-left:-1120px;grid-template-columns:repeat(40,56px);grid-auto-rows:56px}
+.gc i{border-right:1px solid rgba(247,249,242,.045);border-bottom:1px solid rgba(247,249,242,.045);transition:background-color 2.2s ease}
+.gc i:hover{background-color:rgba(247,249,242,.09);transition:background-color 0s}
+.bms{position:absolute;inset:0;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 62% 70% at 50% 34%,#000 35%,transparent 92%);mask-image:radial-gradient(ellipse 62% 70% at 50% 34%,#000 35%,transparent 92%)}
+.bm{position:absolute;display:block;opacity:0}
+.bv{top:0;width:1px;height:150px;margin-left:-1px;background:linear-gradient(180deg,rgba(247,249,242,0),color-mix(in srgb,var(--acc) 85%,transparent))}
+.bl{left:0;height:1px;width:170px;background:linear-gradient(90deg,rgba(247,249,242,0),color-mix(in srgb,var(--acc) 85%,transparent))}
+.br{right:0;height:1px;width:170px;background:linear-gradient(270deg,rgba(247,249,242,0),color-mix(in srgb,var(--acc) 85%,transparent))}
+@media (prefers-reduced-motion: no-preference){
+.bv{animation:bv 7s linear infinite}.bl{animation:bl 8s linear infinite}.br{animation:brr 8s linear infinite}
+}
+@keyframes bv{0%{transform:translateY(-160px);opacity:0}12%{opacity:1}70%{opacity:1}100%{transform:translateY(720px);opacity:0}}
+@keyframes bl{0%{transform:translateX(-180px);opacity:0}15%{opacity:1}70%{opacity:1}100%{transform:translateX(300px);opacity:0}}
+@keyframes brr{0%{transform:translateX(180px);opacity:0}15%{opacity:1}70%{opacity:1}100%{transform:translateX(-300px);opacity:0}}
+
+.hv-shot{bottom:0;display:flex;flex-direction:column}
+.hbg .glow{position:absolute;left:50%;bottom:-30%;width:1600px;height:1000px;margin-left:-800px;background:radial-gradient(closest-side,rgba(247,249,242,.08),rgba(247,249,242,0));pointer-events:none}
+.hv-shot{position:absolute;left:0;right:0;top:120px;border-radius:24px 24px 0 0;overflow:hidden;background:#F7F9F2;box-shadow:0 -20px 70px rgba(0,0,0,.3)}
+.phone{position:absolute;left:50%;top:0;width:312px;margin-left:-156px;height:650px;border-radius:48px;background:#000000;padding:9px;box-sizing:border-box;box-shadow:0 50px 90px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.12);z-index:3}
+.phone.st{position:relative;left:auto;top:auto;margin:0 auto;width:340px;height:600px;box-shadow:0 40px 80px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.12)}
+.scr{height:100%;border-radius:40px;background:#F0F1EB;overflow:hidden;display:flex;flex-direction:column;color:#0B0C0A;text-align:left}
+.ph-top{background:#0B0C0A;color:#F7F9F2;padding:36px 16px 12px;display:flex;align-items:center;gap:10px;position:relative;flex:none}
+.ph-top:before{content:"";position:absolute;top:10px;left:50%;width:84px;height:22px;margin-left:-42px;border-radius:999px;background:#000000}
+.ph-av{width:38px;height:38px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;overflow:hidden;object-fit:cover}
+.ph-name{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.ph-name strong{font-size:14.5px}
+.ph-name span{font-size:12px;color:#C3C6BD}
+.ph-wa{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#C3C6BD}
+.ph-wa i{width:8px;height:8px;border-radius:50%;background:#25D366;display:block}
+.ph-chat{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;line-height:1.42;min-height:0}
+.bub{max-width:84%;padding:9px 12px 6px;border-radius:16px;box-shadow:0 1px 1px rgba(11,12,10,.06);box-sizing:border-box}
+.bub small{display:block;text-align:right;font-size:10.5px;color:#5F625B;margin-top:2px}
+.bub.c{align-self:flex-start;background:#FFFFFF;border-radius:16px 16px 16px 4px}
+.bub.a{align-self:flex-end;background:#F6FCBE;border-radius:16px 16px 4px 16px}
+.slot{align-self:flex-end;position:relative;max-width:84%;display:flex;justify-content:flex-end}
+.slot .bub{max-width:100%}
+.ev{align-self:center;display:flex;align-items:center;gap:8px;background:#0B0C0A;color:#F7F9F2;font-size:12px;font-weight:600;padding:7px 12px;border-radius:12px;line-height:1.35;max-width:92%;box-sizing:border-box}
+.ev i{width:8px;height:8px;border-radius:50%;background:var(--acc);display:block;flex:none}
+.day{align-self:center;font-size:11px;font-weight:600;color:#5F625B;background:#EEF3DC;padding:3px 10px;border-radius:8px}
+.tp{position:absolute;right:0;top:0;background:#F6FCBE;border-radius:16px 16px 4px 16px;padding:12px 14px;display:none;gap:4px}
+.tp i{width:6px;height:6px;border-radius:50%;background:#5F625B;display:block;animation:tdot 1s infinite}
+.tp i:nth-child(2){animation-delay:.15s}.tp i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{0%,60%,100%{transform:none;opacity:.45}30%{transform:translateY(-3px);opacity:1}}
+.hcard{position:absolute;width:312px;z-index:4;color:#0B0C0A}
+.hcard .float{background:#F7F9F2;border-radius:20px;padding:10px 14px 10px 10px;box-shadow:0 18px 40px rgba(0,0,0,.25);display:flex;align-items:center;gap:12px}
+.hcard img{width:50px;height:50px;border-radius:14px;object-fit:cover;flex:none;display:block}
+.hcard span.t{display:flex;flex-direction:column;line-height:1.3}
+.hcard strong{font-size:14px}
+.hcard em{font-style:normal;font-size:13px;color:#5F625B}
+@media (prefers-reduced-motion: no-preference){
+.hv .q{opacity:0;animation-duration:16s;animation-iteration-count:infinite;animation-timing-function:ease;animation-fill-mode:both}
+.q6{animation-name:q6}.q18{animation-name:q18}.q31{animation-name:q31}.q43{animation-name:q43}.q54{animation-name:q54}.q62{animation-name:q62}
+.hv .tp{display:flex;opacity:0;animation-duration:16s;animation-iteration-count:infinite;animation-fill-mode:both}
+.t1{animation-name:t1}.t2{animation-name:t2}
+}
+@keyframes q6{0%,5%{opacity:0;transform:translateY(8px)}8%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes q18{0%,17%{opacity:0;transform:translateY(8px)}20%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes q31{0%,30%{opacity:0;transform:translateY(8px)}33%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes q43{0%,42%{opacity:0;transform:translateY(8px)}45%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes q54{0%,53%{opacity:0;transform:translateY(8px)}56%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes q62{0%,61%{opacity:0;transform:translateY(8px)}64%,93%{opacity:1;transform:none}97%,100%{opacity:0;transform:none}}
+@keyframes t1{0%,9%{opacity:0}10%,17%{opacity:1}18%,100%{opacity:0}}
+@keyframes t2{0%,34%{opacity:0}35%,42%{opacity:1}43%,100%{opacity:0}}
+@media (max-width: 760px){.hv{height:520px}.hv-shot{display:none}.phone{width:286px;margin-left:-143px;height:580px}}
+.agr{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
+.ag-wrap{position:relative;max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,104px) clamp(24px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px 80px;align-items:center}
+@media (max-width: 960px){.ag-wrap{grid-template-columns:minmax(0,1fr)}}
+.ag-list{display:flex;flex-direction:column;gap:6px;margin-top:28px}
+.ag-i{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:16px;align-items:center;padding:10px 16px 10px 10px;border-radius:22px;cursor:pointer;border:1px solid transparent;transition:background .25s ease,border-color .25s ease}
+.ag-i:hover{background:rgba(247,249,242,.05)}
+.ag-i img{width:52px;height:52px;border-radius:16px;object-fit:cover;display:block}
+.ag-n{display:flex;flex-direction:column;line-height:1.3}
+.ag-n strong{font-size:17px}
+.ag-n span{font-size:14px;color:#C3C6BD}
+.ag-d{grid-column:2;font-size:15px;line-height:1.5;color:#C3C6BD;max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .35s ease,margin .35s ease}
+#ag1:checked ~ .ag-wrap .ag-i1,#ag2:checked ~ .ag-wrap .ag-i2,#ag3:checked ~ .ag-wrap .ag-i3,#ag4:checked ~ .ag-wrap .ag-i4,#ag5:checked ~ .ag-wrap .ag-i5,#ag6:checked ~ .ag-wrap .ag-i6{background:rgba(247,249,242,.08);border-color:color-mix(in srgb, var(--acc) 40%, transparent)}
+#ag1:checked ~ .ag-wrap .ag-i1 .ag-d,#ag2:checked ~ .ag-wrap .ag-i2 .ag-d,#ag3:checked ~ .ag-wrap .ag-i3 .ag-d,#ag4:checked ~ .ag-wrap .ag-i4 .ag-d,#ag5:checked ~ .ag-wrap .ag-i5 .ag-d,#ag6:checked ~ .ag-wrap .ag-i6 .ag-d{max-height:140px;opacity:1;margin-top:6px}
+#ag1:focus-visible ~ .ag-wrap .ag-i1,#ag2:focus-visible ~ .ag-wrap .ag-i2,#ag3:focus-visible ~ .ag-wrap .ag-i3,#ag4:focus-visible ~ .ag-wrap .ag-i4,#ag5:focus-visible ~ .ag-wrap .ag-i5,#ag6:focus-visible ~ .ag-wrap .ag-i6{outline:2px solid var(--acc);outline-offset:2px}
+.ag-p{display:none;flex-direction:column;height:100%}
+#ag1:checked ~ .ag-wrap .ag-p1,#ag2:checked ~ .ag-wrap .ag-p2,#ag3:checked ~ .ag-wrap .ag-p3,#ag4:checked ~ .ag-wrap .ag-p4,#ag5:checked ~ .ag-wrap .ag-p5,#ag6:checked ~ .ag-wrap .ag-p6{display:flex}
+.ag-p .s{animation:pop .45s ease both}
+.ag-p .s1{animation-delay:.15s}.ag-p .s2{animation-delay:.8s}.ag-p .s3{animation-delay:1.45s}.ag-p .s4{animation-delay:2.1s}.ag-p .s5{animation-delay:2.75s}.ag-p .s6{animation-delay:3.4s}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.ficha{align-self:stretch;background:#FFFFFF;border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:7px;font-size:12.5px;box-shadow:0 1px 1px rgba(11,12,10,.06)}
+.ficha div{display:flex;justify-content:space-between;gap:10px}
+.ficha span{color:#5F625B}
+.ficha b{font-weight:600;text-align:right}
+.tb-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 36px;border-bottom:1px solid #E2E4DC;margin:4px auto 40px;max-width:760px}
+.tb-tabs label{cursor:pointer;padding:14px 2px;font-weight:600;font-size:16px;color:#5F625B;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s ease,border-color .2s ease}
+.tb-tabs label:hover{color:#0B0C0A}
+#tb1:checked ~ .tb-wrap .tl1,#tb2:checked ~ .tb-wrap .tl2,#tb3:checked ~ .tb-wrap .tl3,#tb4:checked ~ .tb-wrap .tl4{color:#0B0C0A;border-bottom-color:#0B0C0A}
+#tb1:focus-visible ~ .tb-wrap .tl1,#tb2:focus-visible ~ .tb-wrap .tl2,#tb3:focus-visible ~ .tb-wrap .tl3,#tb4:focus-visible ~ .tb-wrap .tl4{outline:2px solid #0B0C0A;outline-offset:4px}
+.tb-p{display:none;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:40px 56px;align-items:center}
+#tb1:checked ~ .tb-wrap .tp1,#tb2:checked ~ .tb-wrap .tp2,#tb3:checked ~ .tb-wrap .tp3,#tb4:checked ~ .tb-wrap .tp4{display:grid}
+.tb-fr{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}
+.tb-fr img{display:block;max-width:100%;max-height:520px;width:auto;height:auto;border-radius:16px;border:1px solid #E2E4DC;box-shadow:0 30px 60px rgba(11,12,10,.16);animation:pop .5s ease both}
+@media (max-width: 900px){.tb-p{grid-template-columns:minmax(0,1fr)}.tb-fr{min-height:0}}
+.tb-txt ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.tb-txt li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px}
+.tb-txt li svg{flex:none;margin-top:3px}
+.case{border-radius:32px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:22px;box-sizing:border-box}
+.case blockquote{margin:0;font-size:15px;line-height:1.6;font-family:'Poppins',sans-serif}
+.case .who{margin-top:auto;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.cl-logo{height:40px;display:flex;align-items:center}
+.cl-logo img{display:block;width:auto}
+.stick{position:sticky;bottom:22px;z-index:40;height:0;display:flex;align-items:flex-start;justify-content:center;pointer-events:none}
+.stick a{pointer-events:auto;position:relative;top:-66px;display:inline-flex;align-items:center;gap:12px;background:#0B0C0A;color:#F7F9F2;text-decoration:none;padding:9px 10px 9px 9px;border-radius:999px;box-shadow:0 18px 40px rgba(11,12,10,.35),inset 0 0 0 1px color-mix(in srgb, var(--acc) 18%, transparent);font-weight:700;font-size:15px;white-space:nowrap}
+.stick a:hover{color:#F7F9F2}
+.stick .ic{width:38px;height:38px;border-radius:50%;background:#1E221C;display:flex;align-items:center;justify-content:center;flex:none}
+.stick .go{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#0B0C0A;display:flex;align-items:center;justify-content:center;flex:none;font-size:17px}
+.stick small{font-size:13px;font-weight:500;color:#C3C6BD}
+@supports (animation-timeline: scroll()){.stick a{animation:stickIn linear both;animation-timeline:scroll(root);animation-range:0px 760px}}
+@keyframes stickIn{0%,70%{opacity:0;transform:translateY(18px);pointer-events:none}100%{opacity:1;transform:none;pointer-events:auto}}
+#comecar{view-timeline-name:--fim}
+@supports (timeline-scope: --fim){.stick{animation:stickOut linear both;animation-timeline:--fim;animation-range:entry 5% entry 45%}}
+@keyframes stickOut{from{opacity:1}to{opacity:0;transform:translateY(30px);visibility:hidden}}
+@media (max-width: 560px){.stick small{display:none}}
+/* ===== v3 ===== */
+.rbar{position:fixed;left:0;top:0;right:0;height:3px;background:#0B0C0A;transform-origin:0 50%;transform:scaleX(0);z-index:60;pointer-events:none}
+@supports (animation-timeline: scroll()){.rbar{animation:rbar linear both;animation-timeline:scroll(root)}}
+@keyframes rbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.stack{display:inline-flex;align-items:center}
+.stack img + img{margin-left:-10px}
+.stm{max-width:1080px;margin:0 auto;padding:clamp(80px,9vw,128px) 24px 0;display:flex;flex-direction:column;align-items:center;gap:56px}
+.stm-p{margin:0;text-align:center;font-family:'Bricolage Grotesque','Poppins',sans-serif;font-weight:500;font-size:clamp(26px,2.9vw,42px);line-height:1.36;letter-spacing:-0.02em;color:#0B0C0A;text-wrap:balance}
+.hv .hcard{width:344px}
+.chip{display:inline-flex;align-items:center;gap:.3em;padding:.1em .55em .1em .12em;border-radius:999px;font-size:.8em;font-weight:700;line-height:1;vertical-align:-.14em;letter-spacing:-0.01em;white-space:nowrap}
+.chip img{width:1.45em;height:1.45em;border-radius:50%;object-fit:cover;object-position:center top;display:block;background:rgba(255,255,255,.55)}
+@supports (animation-timeline: view()){
+.stm-p .w{animation:wl linear both;animation-timeline:view();animation-range:entry 100% cover 48%}
+.stm-p .chip{animation:cl linear both;animation-timeline:view();animation-range:entry 100% cover 48%}
+.js-n img{animation:nl linear both;animation-timeline:view();animation-range:entry 80% cover 45%}
+.js-tr i{animation:tf linear both;animation-timeline:view();animation-range:cover 25% cover 55%}
+}
+@keyframes wl{from{color:rgba(11,12,10,.18)}to{color:#0B0C0A}}
+@keyframes cl{from{opacity:.25;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes nl{from{opacity:.35;transform:scale(.86)}to{opacity:1;transform:none}}
+@keyframes tf{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.outc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%}
+.outc > div{background:#FFFFFF;border:1px solid #E2E4DC;border-radius:28px 28px 28px 8px;padding:28px 26px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.outc h3{margin:8px 0 0;font-size:18px;font-weight:600;line-height:1.35}
+.outc p{margin:0;color:#5F625B;font-size:15px;max-width:300px}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;width:100%;max-width:1040px;margin:0 auto}
+.vs-c{border-radius:32px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:20px;box-sizing:border-box}
+.vs-c header{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+.vs-c h3{margin:0;font-size:22px;font-weight:700;line-height:1.2}
+.vs-c ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.vs-c li{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:14px;padding:16px 0;border-top:1px solid rgba(95,98,91,.25)}
+.vs-c li svg{margin-top:2px}
+.vs-c li span{display:block;font-size:13px;font-weight:600;opacity:.7;margin-bottom:2px}
+.vs-c li p{margin:0;font-size:16px;line-height:1.5}
+.vs-bot{background:#EEF3DC;color:#5F625B}
+.vs-ag{background:#0B0C0A;color:#F7F9F2}
+.vs-ag li{border-top-color:rgba(247,249,242,.14)}
+.vs-ag li p{font-weight:600}
+.ag-live{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;padding:16px 24px;font-size:15px;color:#0B0C0A;text-align:center}
+.ag-live .dot{width:10px;height:10px;border-radius:50%;background:#0B0C0A;display:block;flex:none;box-shadow:0 0 0 0 rgba(11,12,10,.45);animation:pulse 2s ease-out infinite}
+.ag-live span{color:#1E221C}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(11,12,10,.45)}70%{box-shadow:0 0 0 10px rgba(11,12,10,0)}100%{box-shadow:0 0 0 0 rgba(11,12,10,0)}}
+.jl{list-style:none;margin:0 auto;padding:0;max-width:880px;width:100%}
+.js{display:grid;grid-template-columns:136px 56px minmax(0,1fr);column-gap:24px;align-items:start;position:relative;padding-bottom:26px}
+.js-t{font-weight:700;font-size:15px;text-align:right;padding-top:16px;line-height:1.35}
+.js-n{position:relative;z-index:1;width:56px;height:56px}
+.js-n img,.js-n .mk2{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:center top;display:block;box-shadow:0 0 0 4px #F7F9F2}
+.js-n .mk2{background:#0B0C0A;color:#F7F9F2;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.js-tr{position:absolute;left:187px;top:64px;bottom:6px;width:2px;border-radius:2px;background:#EEF3DC;overflow:hidden}
+.js-tr i{position:absolute;inset:0;background:#0B0C0A;transform-origin:50% 0;display:block}
+.js:last-child .js-tr{display:none}
+.js-c{background:#FFFFFF;border:1px solid #E2E4DC;border-radius:22px;padding:16px 22px 18px;display:flex;flex-direction:column;gap:4px}
+.js-c strong{font-size:15px}
+.js-c strong em{font-style:normal;font-weight:500;color:#5F625B}
+.js-c p{margin:0;font-size:15.5px;line-height:1.55}
+.js-c .js-tm{display:none;font-style:normal;font-size:13px;font-weight:700;color:#5F625B}
+.js.hl .js-c{background:#0B0C0A;border-color:#0B0C0A;color:#F7F9F2}
+.js.hl .js-c strong em{color:#C3C6BD}
+@media (max-width: 720px){.js{grid-template-columns:48px minmax(0,1fr);column-gap:16px}.js-t{display:none}.js-n,.js-n img,.js-n .mk2{width:48px;height:48px}.js-tr{left:23px;top:56px}.js-c .js-tm{display:block}}
+.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%}
+.seg > div{background:#FFFFFF;border:1px solid #E2E4DC;border-radius:28px 28px 28px 8px;padding:26px 24px;display:flex;flex-direction:column;gap:12px}
+.seg header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.seg h3{margin:0;font-size:19px;font-weight:700;line-height:1.25}
+.seg p{margin:0;color:#5F625B;font-size:15px;line-height:1.55}
+.seg a{margin-top:auto;font-weight:700;font-size:15px;text-decoration:none;align-self:flex-start}
+@media (max-width: 1100px){.seg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 900px){.outc,.vs{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 620px){.seg{grid-template-columns:minmax(0,1fr)}}
+.intg{display:flex;flex-direction:column;align-items:center;gap:26px;width:100%}
+.intg-t{margin:0;font-size:16px;font-weight:600;text-align:center}
+.intg-rows{position:relative;width:100%;display:flex;flex-direction:column;gap:14px;padding:6px 0}
+.ir{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+.ir-track{display:flex;gap:14px;width:max-content;padding-right:14px;animation:marquee 46s linear infinite}
+.ir-track.r2{animation-direction:reverse;animation-duration:52s}
+.ir-track.r3{animation-duration:58s}
+.pl{display:inline-flex;align-items:center;gap:9px;height:54px;padding:0 24px;background:#FFFFFF;border-radius:999px;flex:none;font-weight:600;font-size:15px;color:#0B0C0A;box-sizing:border-box;box-shadow:0 1px 2px rgba(11,12,10,.06)}
+.pl img{height:22px;width:auto;display:block}
+.intg-orb{position:absolute;left:50%;top:50%;width:108px;height:108px;margin:-54px 0 0 -54px;border-radius:50%;background:#0B0C0A;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 0 0 12px rgba(238,243,220,.9),0 0 0 26px color-mix(in srgb, var(--acc) 45%, transparent),0 24px 60px rgba(11,12,10,.35);animation:orb 3.6s ease-in-out infinite}
+.intg-orb img{width:46px;height:auto;display:block}
+@keyframes orb{0%,100%{box-shadow:0 0 0 12px rgba(238,243,220,.9),0 0 0 26px color-mix(in srgb, var(--acc) 45%, transparent),0 24px 60px rgba(11,12,10,.35)}50%{box-shadow:0 0 0 12px rgba(238,243,220,.9),0 0 0 34px color-mix(in srgb, var(--acc) 25%, transparent),0 24px 60px rgba(11,12,10,.35)}}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ba > div{border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.ba span{font-size:13px;font-weight:700}
+.ba p{margin:0;font-size:14.5px;line-height:1.5}
+.ba-l > div:first-child{background:#F7F9F2;color:#5F625B}
+.ba-l > div:last-child{background:#F6FCBE;color:#0B0C0A}
+.ba-d > div:first-child{background:#1E221C;color:#C3C6BD}
+.ba-d > div:last-child{background:color-mix(in srgb, var(--acc) 14%, transparent);color:#F7F9F2}
+@media (max-width: 560px){.ba{grid-template-columns:minmax(0,1fr)}}
+.qa{display:flex;flex-direction:column;gap:6px;padding:20px 0;border-bottom:1px solid #E2E4DC}
+.qa:last-child{border-bottom:0}
+.qa h3{margin:0;font-size:19px;font-weight:700;line-height:1.35}
+.qa p{margin:0;color:#5F625B;font-size:16px}
+.ph3{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;width:100%;padding-top:34px}
+.ph3-line{position:absolute;left:8px;right:8px;top:7px;height:3px;border-radius:3px;background:linear-gradient(90deg,#0B0C0A 0%,#0B0C0A 34%,var(--acc) 67%,#E2E4DC 100%)}
+.ph3 > div{position:relative;display:flex;flex-direction:column;gap:6px}
+.ph3 > div:before{content:"";position:absolute;left:0;top:-34px;width:17px;height:17px;border-radius:50%;background:#0B0C0A;box-shadow:0 0 0 5px #F7F9F2}
+.ph3 strong{font-size:17px}
+.ph3 p{margin:0;color:#5F625B;font-size:15px}
+@media (max-width: 760px){.ph3{grid-template-columns:minmax(0,1fr);padding-top:0;padding-left:34px;gap:22px}.ph3-line{left:7px;right:auto;top:8px;bottom:8px;width:3px;height:auto;background:linear-gradient(180deg,#0B0C0A 0%,#0B0C0A 34%,var(--acc) 67%,#E2E4DC 100%)}.ph3 > div:before{left:-34px;top:2px}}
+h1,h2,h3{text-wrap:balance}
+p,blockquote,li,.ag-d,.tr-s{text-wrap:pretty}
+.trust{max-width:1040px;margin:52px auto 0;padding:0 24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tr-i{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:4px 28px}
+.tr-i + .tr-i{border-left:1px solid #E2E4DC}
+.tr-ic{height:30px;display:flex;align-items:center;gap:10px;margin-bottom:8px;color:#5F625B;font-size:13px;font-weight:600}
+.tr-i strong{font-size:16px;font-weight:600;line-height:1.35}
+.tr-s{font-size:14px;color:#5F625B;line-height:1.5}
+@media (max-width: 760px){.trust{grid-template-columns:minmax(0,1fr);gap:22px}.tr-i + .tr-i{border-left:0;border-top:1px solid #E2E4DC;padding-top:22px}}
+.stepn{width:36px;height:36px;border-radius:50%;background:#0B0C0A;color:var(--acc);font:700 15px/36px 'Poppins',sans-serif;text-align:center;display:block}
+.ag-n strong{font-size:16px}.ag-d{font-size:14.5px}
+.tb-txt li{font-size:15px}
+.vid.vreal{padding:0}
+.vid.vreal:hover{transform:none;box-shadow:none}
+.vreal video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;background:#0B0C0A}
+.vcap{position:absolute;left:0;right:0;top:0;padding:18px 20px 44px;display:flex;flex-direction:column;line-height:1.35;color:#F7F9F2;background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,0));pointer-events:none}
+.tband{background:#EEF3DC;border-radius:32px;padding:clamp(30px,3.4vw,44px) 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:26px}
+.tband > div{width:100%;max-width:560px;text-align:left}
+.case > strong,.marquee-wrap > p{text-wrap:balance}
+.vcap strong{font-size:15px}.vcap span{font-size:13px;color:#C3C6BD}
+.depth{position:absolute;inset:0;background:radial-gradient(130% 95% at 50% 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,.55) 100%)}
+.hp-div{width:1px;height:36px;background:rgba(238,243,220,.3);display:block}
+@media (max-width: 560px){.hp-div{display:none}}
+.bar{display:block;height:14px;border-radius:999px;transform-origin:left center}
+@supports (animation-timeline: view()){@keyframes grow{from{transform:scaleX(0)}to{transform:none}}.bar{animation:grow linear both;animation-timeline:view();animation-range:entry 30% cover 45%}}
+.vid{position:relative;margin:0;border-radius:28px;overflow:hidden;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;box-sizing:border-box;color:#0B0C0A;cursor:pointer;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.vid:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(11,12,10,.16)}
+.vid .play{position:absolute;left:50%;top:44%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:#0B0C0A;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(11,12,10,.28);transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.vid:hover .play{transform:scale(1.08)}
+@media (max-width: 760px){.vids{grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.vids .vid{scroll-snap-align:start}}
+</style>
+</head>
+<body>
+<div class="rbar" aria-hidden="true"></div>
+<div style="--acc: #F8FF99; timeline-scope: --fim; width: 100%; overflow-x: clip; background: #F7F9F2; color: #0B0C0A; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; line-height: 1.6;">
+
+
+
+<section id="topo">
+<div style="position: relative; overflow: hidden; background: #0B0C0A; color: #F7F9F2;">
+<div class="hbg" aria-hidden="true"><span class="depth"></span><span class="gx gc"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="bms"><span class="bm bv" style="left: calc(50% + -840px); animation-delay: -0.0s; animation-duration: 6.7s;"></span><span class="bm bv" style="left: calc(50% + -672px); animation-delay: -6.6s; animation-duration: 6.1s;"></span><span class="bm bv" style="left: calc(50% + -504px); animation-delay: -4.0s; animation-duration: 7.7s;"></span><span class="bm bv" style="left: calc(50% + 504px); animation-delay: -0.0s; animation-duration: 7.3s;"></span><span class="bm bv" style="left: calc(50% + 672px); animation-delay: -2.6s; animation-duration: 5.9s;"></span><span class="bm bv" style="left: calc(50% + 840px); animation-delay: -5.4s; animation-duration: 5.9s;"></span><span class="bm bl" style="top: 112px; animation-delay: -2.5s; animation-duration: 7.2s;"></span><span class="bm br" style="top: 280px; animation-delay: -0.1s; animation-duration: 8.6s;"></span><span class="bm bl" style="top: 280px; animation-delay: -3.6s; animation-duration: 6.7s;"></span><span class="bm br" style="top: 448px; animation-delay: -4.4s; animation-duration: 6.1s;"></span><span class="bm bl" style="top: 448px; animation-delay: -2.7s; animation-duration: 8.5s;"></span><span class="bm br" style="top: 616px; animation-delay: -3.4s; animation-duration: 6.4s;"></span><span class="bm bl" style="top: 616px; animation-delay: -6.5s; animation-duration: 6.2s;"></span><span class="bm br" style="top: 784px; animation-delay: -2.0s; animation-duration: 8.7s;"></span></span><span class="glow"></span><span class="grain"></span></div>
+<header class="hx" style="position: relative; z-index: 5; max-width: 1280px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px;">
+<a href="#topo" aria-label="Lemify Atendimento e CRM, início da página" style="display: flex; align-items: center; gap: 14px; text-decoration: none;"><img src="/assets/04d289e00871671dd82abc8176788f8f.svg" alt="Lemify" style="height: 32px; width: auto; display: block;"><span class="hdr-sub" style="padding-left: 14px; border-left: 1px solid rgba(247, 249, 242, 0.22); font-size: 14px; font-weight: 600; color: #C3C6BD; line-height: 1.25;">Atendimento<br>e CRM</span></a>
+<nav aria-label="Principal" class="topnav" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 30px; font-size: 15px; font-weight: 600;">
+<a href="#como-funciona" class="nav-link nav-d" style="text-decoration: none; padding: 12px 0;">Como funciona</a>
+<a href="#agentes" class="nav-link nav-d" style="text-decoration: none; padding: 12px 0;">Agentes de IA</a>
+<a href="#cases" class="nav-link nav-d" style="text-decoration: none; padding: 12px 0;">Clientes</a>
+<a href="/planos" class="nav-link nav-d" style="text-decoration: none; padding: 12px 0;">Planos e preços</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 20px;">
+<a href="https://app.lemify.com.br/" class="nav-link nav-d hdr-in" style="text-decoration: none; font-size: 15px; font-weight: 600; padding: 12px 0;">Entrar</a>
+<a href="https://app.lemify.com.br/signup" class="btn" style="background: #F8FF99; color: #0B0C0A; text-decoration: none; font-size: 15px; font-weight: 700; padding: 13px 24px; border-radius: 999px; min-height: 46px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px;">Testar grátis <span class="arr">→</span></a>
+</div>
+</header>
+<div class="hx" style="position: relative; padding: clamp(48px, 6vw, 88px) clamp(20px, 4vw, 48px) 0;">
+<div style="max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;">
+<h1 class="in d2" style="margin: 0; font-weight: 500; font-size: clamp(32px, 3.3vw, 46px); line-height: 1.12; letter-spacing: -0.025em;">Você paga para o cliente chamar.<br><strong style="font-weight: 700; color: #F8FF99;">Os agentes de IA do Lemify cuidam do resto.</strong></h1>
+<p class="in d3" style="margin: 0; font-size: 17px; color: #C3C6BD; max-width: 560px;">Eles respondem em segundos, preenchem o CRM e recuperam quem sumiu, sozinhos. A sua equipe só entra para fechar.</p>
+<div class="in d4" style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 4px;">
+<a href="https://app.lemify.com.br/signup" class="btn" style="background: #F8FF99; color: #0B0C0A; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a>
+<span style="font-size: 14px; color: #C3C6BD;">Sem cartão e sem falar com vendedor.</span>
+
+</div>
+</div>
+<div class="hv in d5">
+<div class="hv-shot"><div style="display: flex; gap: 8px; padding: 12px 16px; border-bottom: 1px solid #E2E4DC;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #EEF3DC; display: block;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #EEF3DC; display: block;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #EEF3DC; display: block;"></span></div><div style="flex: 1; min-height: 0; overflow: hidden;"><img src="/assets/21b36fe06b1e63aff9ccf6c7146dcebd.jpg" alt="Tela real do Lemify com a caixa de conversas de vários canais" style="width: 100%; height: auto; display: block; margin-top: -4.8%;"></div></div>
+<div class="phone" role="img" aria-label="Conversa no WhatsApp: a cliente pergunta sobre um sofá às 22h14 e a agente Lemi responde na hora e agenda a visita para sábado">
+<div class="scr" aria-hidden="true">
+<div class="ph-top"><img class="ph-av" src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="background: #F6FCBE; object-position: center top;"><span class="ph-name"><strong>Lemi</strong><span>online agora</span></span><span class="ph-wa"><i></i>WhatsApp</span></div>
+<div class="ph-chat">
+<span class="day">Hoje</span>
+<div class="bub c q q6">Oi! O sofá retrátil cinza ainda está disponível?<small>22:14</small></div>
+<div class="slot"><span class="tp t1"><i></i><i></i><i></i></span><div class="bub a q q18">Oi, Marina! Está sim. Ele sai por R$ 3.490 e entrega em até 7 dias úteis. Quer ver na loja?<small>22:14</small></div></div>
+<div class="bub c q q31">Quero! Sábado de manhã dá?<small>22:15</small></div>
+<div class="slot"><span class="tp t2"><i></i><i></i><i></i></span><div class="bub a q q43">Dá sim. Reservei sábado às 11h pra você e te mando a confirmação por aqui.<small>22:15</small></div></div>
+<span class="ev q q54"><i></i>Visita agendada · sábado, 11h</span>
+</div>
+</div>
+</div>
+<div class="hcard deco q q18" style="left: 0; top: 150px;"><div class="float"><img src="/assets/25cc23e8bc53ffa6856c1d2d4b04eb01.webp" alt="" style="background: #F6FCBE;"><span class="t"><strong>Lemi respondeu em 10 segundos</strong><em>às 22:14, sem ninguém online</em></span></div></div>
+<div class="hcard deco q q31" style="right: 0; top: 96px;"><div class="float"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="background: #F0DADE;"><span class="t"><strong>Otto preencheu a ficha</strong><em>nome, telefone e interesse</em></span></div></div>
+<div class="hcard deco q q43" style="right: 30px; top: 250px;"><div class="float"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="background: #CAD9C2;"><span class="t"><strong>Theo criou a negociação</strong><em>Sofá retrátil · R$ 3.490</em></span></div></div>
+<div class="hcard deco q q54" style="left: 50px; top: 330px;"><div class="float"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="background: #D8E7EF;"><span class="t"><strong>Maia agendou a visita</strong><em>sábado, às 11h</em></span></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Clientes" class="marquee-wrap" style="padding: 56px 0 8px; overflow: hidden;">
+<p style="margin: 0 0 30px; text-align: center; font-size: 16px; font-weight: 500; color: #5F625B; padding: 0 24px;">Mais de 2 mil empresas atendem com o Lemify</p>
+<div style="-webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);">
+<div class="marquee" style="display: flex; width: max-content; align-items: center; gap: 80px; padding-right: 80px;">
+<img src="/assets/0572fa0274db3c0c559291e102b0ec92.png" alt="Espazzo Móveis Conceito" style="height: 36px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/2f9a25f1ab3725c5a235730a2b038ea9.png" alt="Instituto Guilherme Rocha" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/1273288ff07feafcdec8e389b7cd0dc6.png" alt="Vamos Sorrir Odontologia" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/a95925a819e85e05e6730c59c5bfb5ed.png" alt="Instituto Machado Xavier Odontologia" style="height: 32px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/b28f30201ecd5a07fedf1dde363884e7.png" alt="Time Agência de Publicidade" style="height: 34px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/775a9b63073212517d07fe8bc41bf55e.png" alt="PlanaSul" style="height: 34px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/959bc971d2cf19404f893e1c9b44cb8e.png" alt="Nexuma Tecnologia" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/ce2376cd7126c526d561ebaf00771b49.png" alt="Zelura Cosméticos" style="height: 38px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/01fe3f64d05d8c506e2159ac3e99c72c.png" alt="Cliente do Lemify" style="height: 40px; width: auto; display: block; flex: none; opacity: 0.9;">
+<img src="/assets/0572fa0274db3c0c559291e102b0ec92.png" alt="" style="height: 36px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/2f9a25f1ab3725c5a235730a2b038ea9.png" alt="" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/1273288ff07feafcdec8e389b7cd0dc6.png" alt="" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/a95925a819e85e05e6730c59c5bfb5ed.png" alt="" style="height: 32px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/b28f30201ecd5a07fedf1dde363884e7.png" alt="" style="height: 34px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/775a9b63073212517d07fe8bc41bf55e.png" alt="" style="height: 34px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/959bc971d2cf19404f893e1c9b44cb8e.png" alt="" style="height: 30px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/ce2376cd7126c526d561ebaf00771b49.png" alt="" style="height: 38px; width: auto; display: block; flex: none; opacity: 0.9;"><img src="/assets/01fe3f64d05d8c506e2159ac3e99c72c.png" alt="" style="height: 40px; width: auto; display: block; flex: none; opacity: 0.9;">
+</div>
+</div>
+<div class="trust">
+<div class="tr-i"><span class="tr-ic"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="Meta" style="height: 20px; width: auto; display: block;"><span aria-hidden="true" style="width: 1px; height: 18px; background: #D3D5CD; display: block;"></span><span>Business Partner</span></span></div>
+<div class="tr-i"><span class="tr-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><strong>Atende 24 horas por dia</strong><span class="tr-s">7 dias por semana</span></div>
+<div class="tr-i"><span class="tr-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"></path></svg></span><strong>Atende assim que você conecta</strong><span class="tr-s">e você testa por 14 dias, sem cartão</span></div>
+</div>
+</section>
+
+<section aria-label="O problema" style="padding: clamp(56px, 7vw, 96px) 16px 0;">
+<div style="position: relative; overflow: hidden; max-width: 1408px; margin: 0 auto; background: #EEF3DC; border-radius: 40px;">
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(24px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; gap: 48px 64px;">
+<div style="flex: 1 1 400px; min-width: 0;">
+<div style="border-radius: 200px 40px 200px 40px; overflow: hidden; aspect-ratio: 4 / 5;">
+<img src="/assets/04313cfcc9779fa36a46d8afde208e4f.jpg" alt="Atendente de loja atendendo uma cliente no balcão" style="width: 100%; height: 100%; object-fit: cover; object-position: 38% center; display: block;">
+</div>
+</div>
+<div style="flex: 1.2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">O anúncio traz o contato.<br><strong style="font-weight: 700;">É depois que a venda se perde.</strong></h2>
+<p style="margin: -8px 0 0; font-size: 17px; color: #5F625B;">Você reconhece algum desses dias?</p>
+<div style="display: flex; flex-direction: column;">
+<div style="display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(95,98,91, 0.28);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M20 15.5A8.5 8.5 0 1 1 8.5 4a7 7 0 0 0 11.5 11.5z"></path></svg><div><h3 style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.45;">A mensagem das 22h só é vista no dia seguinte, e o cliente já comprou de outra empresa.</h3></div></div>
+<div style="display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(95,98,91, 0.28);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 12a8 8 0 0 1 13.7-5.6M20 12a8 8 0 0 1-13.7 5.6"></path><path d="M18 3v4h-4M6 21v-4h4"></path></svg><div><h3 style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.45;">O mesmo cliente fala com uma pessoa no WhatsApp e com outra no Instagram, e ninguém sabe o que já foi dito.</h3></div></div>
+<div style="display: flex; gap: 18px; padding: 20px 0; border-bottom: 1px solid rgba(95,98,91, 0.28);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 6h16M4 12h10M4 18h6"></path><circle cx="18" cy="17" r="3"></circle></svg><div><h3 style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.45;">A equipe passa o dia respondendo preço, prazo e horário, e sobra pouco tempo para quem está pronto para comprar.</h3></div></div>
+<div style="display: flex; gap: 18px; padding: 20px 0;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px;"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg><div><h3 style="margin: 0; font-size: 17px; font-weight: 500; line-height: 1.45;">Você investe em anúncio, mas não sabe qual trouxe venda e qual só trouxe mensagem.</h3></div></div>
+</div>
+<p style="margin: 4px 0 0; background: #F7F9F2; border-radius: 24px 24px 24px 6px; padding: 22px 24px; font-size: 16.5px; line-height: 1.55;">Cada contato sem resposta é anúncio jogado fora. <strong>E quase sempre o motivo é trabalho repetido, que um agente de IA faz sozinho.</strong></p>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="O que os agentes fazem" class="stm">
+<p class="stm-p"><span class="w">Com</span> <span class="w">o</span> <span class="w">Lemify,</span> <span class="chip" style="background: #F6FCBE;"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="">Lemi</span> <span class="w">responde</span> <span class="w">em</span> <span class="w">segundos,</span> <span class="chip" style="background: #D8E7EF;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="">Maia</span> <span class="w">marca</span> <span class="w">o</span> <span class="w">horário,</span> <span class="chip" style="background: #F0DADE;"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="">Otto</span> <span class="w">preenche</span> <span class="w">a</span> <span class="w">ficha,</span> <span class="chip" style="background: #CAD9C2;"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="">Theo</span> <span class="w">organiza</span> <span class="w">o</span> <span class="w">CRM,</span> <span class="chip" style="background: #F3DCC7;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="">Nico</span> <span class="w">chama</span> <span class="w">quem</span> <span class="w">sumiu</span> <span class="w">e</span> <span class="chip" style="background: #E4DDEB;"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="">Íris</span> <span class="w">mostra</span> <span class="w">o</span> <span class="w">que</span> <span class="w">está</span> <span class="w">vendendo.</span></p>
+<div class="outc">
+<div class="lift"><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><h3>Ninguém fica sem resposta</h3><p>Resposta em segundos, em todos os canais, de dia e de noite.</p></div>
+<div class="lift"><span class="stack"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><h3>Nenhuma venda fica parada</h3><p>Ficha preenchida, funil em dia e quem sumiu chamado de volta.</p></div>
+<div class="lift"><span class="stack"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><h3>Você sabe o que fazer</h3><p>Íris mostra o que está vendendo e o que precisa de atenção.</p></div>
+</div>
+</section>
+
+<section aria-label="Não é chatbot" style="max-width: 1280px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) 24px clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 44px;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em; max-width: 820px;">Não é chatbot. <strong style="font-weight: 700;">É uma equipe de IA que trabalha sozinha.</strong></h2>
+<p style="margin: 0; font-size: 17px; color: #5F625B; max-width: 620px;">Chatbot segue roteiro. Os agentes do Lemify entendem a conversa e decidem o próximo passo sozinhos.</p>
+</div>
+<div class="vs">
+<div class="vs-c vs-bot"><header><h3>Chatbot</h3></header><ul><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F625B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><div><span>Como responde</span><p>Com botões e respostas prontas</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F625B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><div><span>O que faz depois</span><p>Nada</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F625B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><div><span>Quando o cliente some</span><p>Esquece</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F625B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg><div><span>O que você fica sabendo</span><p>Quantas mensagens chegaram</p></div></li></ul></div>
+<div class="vs-c vs-ag"><header><h3>Agentes do Lemify</h3><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #0B0C0A;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #0B0C0A;"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #0B0C0A;"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #0B0C0A;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #0B0C0A;"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #0B0C0A;"></span></header><ul><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg><div><span>Como responde</span><p>Entende texto, áudio e imagem</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg><div><span>O que faz depois</span><p>Preenche a ficha, marca o horário e chama a equipe</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg><div><span>Quando o cliente some</span><p>Chama de novo no tempo certo</p></div></li><li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="stroke: var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.2l2.4 2.4 4.6-5"></path></svg><div><span>O que você fica sabendo</span><p>O que está vendendo</p></div></li></ul></div>
+</div>
+</section>
+
+<section id="agentes" style="padding: 0 16px;">
+<div style="position: relative; overflow: hidden; max-width: 1408px; margin: 0 auto; background: #0B0C0A; color: #F7F9F2; border-radius: 40px;">
+<div class="hbg" aria-hidden="true"><span class="depth"></span><span class="grain"></span></div>
+<input type="radio" name="ag" id="ag1" class="agr" checked aria-label="Lemi, Atendimento"><input type="radio" name="ag" id="ag2" class="agr" aria-label="Maia, Agendamento"><input type="radio" name="ag" id="ag3" class="agr" aria-label="Otto, Enriquecimento"><input type="radio" name="ag" id="ag4" class="agr" aria-label="Theo, CRM"><input type="radio" name="ag" id="ag5" class="agr" aria-label="Nico, Follow-up"><input type="radio" name="ag" id="ag6" class="agr" aria-label="Íris, Insights">
+<div class="ag-wrap" style="padding-bottom: clamp(48px, 5vw, 72px);">
+<div>
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">Seis agentes. <strong style="font-weight: 700; color: #F8FF99;">Cada um com uma função.</strong></h2>
+<p style="margin: 16px 0 0; font-size: 17px; color: #C3C6BD; max-width: 560px;">Você liga os que fizerem sentido, conforme o seu plano. Todos trabalham na mesma ficha do cliente.</p>
+<p style="margin: 22px 0 0; font-size: 14px; font-weight: 600; color: #F8FF99;">Escolha um agente e veja ele trabalhando.</p>
+<div class="ag-list" style="margin-top: 14px;"><label for="ag1" class="ag-i ag-i1"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="background: #F6FCBE;"><span class="ag-n"><strong>Lemi · Atendimento</strong><span>Responde na hora, de dia e de noite.</span></span><span class="ag-d">Tira dúvidas de preço, prazo e horário, inclusive por áudio, e chama a equipe quando precisa.</span></label><label for="ag2" class="ag-i ag-i2"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="background: #D8E7EF;"><span class="ag-n"><strong>Maia · Agendamento</strong><span>Marca, remarca e lembra sozinha.</span></span><span class="ag-d">Oferece os horários livres, marca, remarca e lembra o cliente antes.</span></label><label for="ag3" class="ag-i ag-i3"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="background: #F0DADE;"><span class="ag-n"><strong>Otto · Enriquecimento</strong><span>A ficha está sempre preenchida.</span></span><span class="ag-d">Anota nome, cidade, interesse e origem de cada cliente. Ninguém digita cadastro.</span></label><label for="ag4" class="ag-i ag-i4"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="background: #CAD9C2;"><span class="ag-n"><strong>Theo · CRM</strong><span>O funil fica sempre em dia.</span></span><span class="ag-d">Cria a negociação e muda de etapa conforme a conversa avança.</span></label><label for="ag5" class="ag-i ag-i5"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="background: #F3DCC7;"><span class="ag-n"><strong>Nico · Follow-up</strong><span>Recupera vendas paradas.</span></span><span class="ag-d">Chama de novo quem parou de responder, no tempo certo.</span></label><label for="ag6" class="ag-i ag-i6"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="background: #E4DDEB;"><span class="ag-n"><strong>Íris · Insights</strong><span>Mostra o que fazer a seguir.</span></span><span class="ag-d">Mostra o que está trazendo venda e sugere o próximo passo.</span></label></div>
+</div>
+<div>
+<div class="phone st"><div class="scr"><div class="ag-p ag-p1"><div class="ph-top"><img class="ph-av" src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="background: #F6FCBE;"><span class="ph-name"><strong>Lemi · Atendimento</strong><span>online agora</span></span><span class="ph-wa"><i></i>WhatsApp</span></div><div class="ph-chat"><div class="bub c s s1">Boa noite! Vocês entregam no Centro?<small>22:14</small></div><div class="bub a s s2">Boa noite! Entregamos sim, em até 3 dias úteis. Quer que eu te mande o catálogo com os preços?<small>22:14</small></div><div class="bub c s s3">Quero, por favor!<small>22:15</small></div><div class="bub a s s4">Pronto, mandei aqui. Se quiser, já separo o seu pedido.<small>22:15</small></div><span class="ev s s5"><i></i>Respondeu em 10 segundos, fora do horário comercial</span></div></div><div class="ag-p ag-p2"><div class="ph-top"><img class="ph-av" src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="background: #D8E7EF;"><span class="ph-name"><strong>Maia · Agendamento</strong><span>online agora</span></span><span class="ph-wa"><i></i>WhatsApp</span></div><div class="ph-chat"><div class="bub c s s1">Oi! Queria marcar uma avaliação. Tem horário essa semana?<small>09:02</small></div><div class="bub a s s2">Tenho quinta às 14h ou sexta às 9h. Qual fica melhor pra você?<small>09:02</small></div><div class="bub c s s3">Sexta às 9h.<small>09:03</small></div><div class="bub a s s4">Prontinho, sexta às 9h está marcado. Um dia antes eu te mando um lembrete.<small>09:03</small></div><span class="ev s s5"><i></i>Agendado na agenda · sexta, 9h</span></div></div><div class="ag-p ag-p3"><div class="ph-top"><img class="ph-av" src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="background: #F0DADE;"><span class="ph-name"><strong>Otto · Enriquecimento</strong><span>trabalhando nos bastidores</span></span><span class="ph-wa"><i></i>WhatsApp</span></div><div class="ph-chat"><div class="bub c s s1">Meu nome é Marina Alves, sou de Vitória.<small>14:22</small></div><div class="bub c s s2">Pode mandar no marina@exemplo.com<small>14:22</small></div><span class="ev s s3"><i></i>Ficha do cliente preenchida</span><div class="ficha s s4"><div><span>Nome</span><b>Marina Alves</b></div><div><span>Cidade</span><b>Vitória, ES</b></div><div><span>E-mail</span><b>marina@exemplo.com</b></div><div><span>Interesse</span><b>Sofá retrátil</b></div><div><span>Origem</span><b>Instagram</b></div></div></div></div><div class="ag-p ag-p4"><div class="ph-top"><img class="ph-av" src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="background: #CAD9C2;"><span class="ph-name"><strong>Theo · CRM</strong><span>trabalhando nos bastidores</span></span><span class="ph-wa"><i></i>WhatsApp</span></div><div class="ph-chat"><div class="bub c s s1">Gostei! Pode mandar o orçamento do sofá?<small>14:20</small></div><div class="bub a s s2">Claro! São R$ 3.490 em até 10x sem juros. Te mandei o orçamento aqui.<small>14:20</small></div><span class="ev s s3"><i></i>Negociação criada · R$ 3.490</span><span class="ev s s4"><i></i>Movida para a etapa Proposta enviada</span><span class="ev s s5"><i></i>Vendedora responsável avisada</span></div></div><div class="ag-p ag-p5"><div class="ph-top"><img class="ph-av" src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="background: #F3DCC7;"><span class="ph-name"><strong>Nico · Follow-up</strong><span>online agora</span></span><span class="ph-wa"><i></i>WhatsApp</span></div><div class="ph-chat"><span class="day s s1">2 dias depois</span><div class="bub a s s2">Oi, Marina! Ficou alguma dúvida sobre o orçamento do sofá?<small>10:00</small></div><div class="bub c s s3">Oi! Fiquei sim. Dá pra entregar antes do dia 20?<small>10:07</small></div><div class="bub a s s4">Dá sim! Já chamei a vendedora pra fechar com você.<small>10:07</small></div><span class="ev s s5"><i></i>Cliente voltou para a conversa</span></div></div><div class="ag-p ag-p6"><div class="ph-top"><img class="ph-av" src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="background: #E4DDEB;"><span class="ph-name"><strong>Íris · Insights</strong><span>resumo da semana</span></span><span class="ph-wa">Painel</span></div><div class="ph-chat"><div class="ficha s s1"><div><span style="color: #0B0C0A; font-weight: 700;">Resumo da semana</span><b></b></div><div><span>Contatos recebidos</span><b>312</b></div><div><span>Respondidos em até 1 minuto</span><b>100%</b></div><div><span>Canal que mais vendeu</span><b>Instagram</b></div><div><span>Pergunta mais feita</span><b>prazo de entrega</b></div></div><div class="bub a s s2">Os contatos que vêm do Instagram estão fechando mais. Vale reforçar esse canal nesta semana.<small>08:00</small></div><span class="ev s s3"><i></i>Resumo pronto para a gestão</span></div></div></div></div>
+<p style="margin: 16px 0 0; text-align: center; font-size: 12px; color: #C3C6BD;">Conversas ilustrativas.</p>
+</div>
+</div>
+<div class="ag-live" style="background: #F8FF99;"><i class="dot" aria-hidden="true"></i><strong>Os 6 agentes estão trabalhando agora</strong><span>24 horas por dia, 7 dias por semana, sempre de bom humor</span></div>
+</div>
+</section>
+
+<section id="uma-venda" aria-label="Uma venda do anúncio até o fechamento" style="max-width: 1280px; margin: 0 auto; padding: clamp(80px, 9vw, 128px) 24px 0; display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em; max-width: 820px;">Veja os agentes <strong style="font-weight: 700;">trabalhando numa venda</strong></h2>
+<p style="margin: 0; font-size: 17px; color: #5F625B; max-width: 620px;">A Marina viu o anúncio de um sofá às 22h14. Veja quem cuidou dela até a venda.</p>
+</div>
+<ol class="jl"><li class="js"><span class="js-t">22h14</span><span class="js-n"><span class="mk2">M</span></span><div class="js-c"><em class="js-tm">22h14</em><strong>Marina <em>· cliente</em></strong><p>Chama no WhatsApp perguntando pelo sofá. Ninguém da loja está online.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">22h14</span><span class="js-n"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="background: #F6FCBE;"></span><div class="js-c"><em class="js-tm">22h14</em><strong>Lemi <em>· Atendimento</em></strong><p>Responde em 10 segundos com preço e prazo de entrega.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">22h15</span><span class="js-n"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="background: #D8E7EF;"></span><div class="js-c"><em class="js-tm">22h15</em><strong>Maia <em>· Agendamento</em></strong><p>Marca a visita para sábado às 11h e agenda os lembretes.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">22h15</span><span class="js-n"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="background: #F0DADE;"></span><div class="js-c"><em class="js-tm">22h15</em><strong>Otto <em>· Enriquecimento</em></strong><p>Preenche a ficha: nome, cidade, interesse e origem.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">22h15</span><span class="js-n"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="background: #CAD9C2;"></span><div class="js-c"><em class="js-tm">22h15</em><strong>Theo <em>· CRM</em></strong><p>Cria a negociação de R$ 3.490 na etapa certa.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js hl"><span class="js-t">Sábado, 11h</span><span class="js-n"><span class="mk2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="stroke: var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"></path><circle cx="16.5" cy="9" r="2.6"></circle><path d="M15.5 14.2c2.4.1 4.3 1.7 4.9 4.8"></path></svg></span></span><div class="js-c"><em class="js-tm">Sábado, 11h</em><strong>Equipe <em>· vendedora da loja</em></strong><p>A vendedora recebe a Marina já sabendo o que ela quer. É a vez de uma pessoa.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">Dois dias depois</span><span class="js-n"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="background: #F3DCC7;"></span><div class="js-c"><em class="js-tm">Dois dias depois</em><strong>Nico <em>· Follow-up</em></strong><p>A Marina some. Nico chama de novo, ela volta e a vendedora é avisada.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li><li class="js"><span class="js-t">Fim da semana</span><span class="js-n"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="background: #E4DDEB;"></span><div class="js-c"><em class="js-tm">Fim da semana</em><strong>Íris <em>· Insights</em></strong><p>Mostra que o Instagram está vendendo mais e sugere reforçar esse canal.</p></div><span class="js-tr" aria-hidden="true"><i></i></span></li></ol>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; margin-top: -8px;">
+<p style="margin: 0; font-size: 18px; font-weight: 500; max-width: 640px; line-height: 1.5;"><strong>A vendedora só precisou fazer o que gente faz melhor: conversar e fechar.</strong></p>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px;"><a href="https://app.lemify.com.br/signup" class="btn" style="background: #0B0C0A; color: #F7F9F2; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a><span style="font-size: 13px; color: #5F625B;">Conversa ilustrativa.</span></div>
+</div>
+</section>
+
+<section aria-label="Como cada negócio usa" style="max-width: 1280px; margin: 0 auto; padding: clamp(80px, 9vw, 120px) 24px clamp(64px, 8vw, 104px); display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">E na sua empresa, <strong style="font-weight: 700;">como fica?</strong></h2>
+<p style="margin: 0; font-size: 17px; color: #5F625B; max-width: 620px;">Os agentes partem de um modelo pronto do seu segmento.</p>
+</div>
+<div class="seg"><div class="lift"><header><h3>Loja</h3><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span></header><p>Lemi responde preço e estoque, e Nico chama de volta quem pediu orçamento e sumiu.</p><a href="#cases" class="tlink">Ver o case da Espazzo <span class="arr">→</span></a></div><div class="lift"><header><h3>Clínica</h3><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span></header><p>Lemi entende o que o paciente quer, e Maia marca e lembra a consulta.</p><a href="#cases" class="tlink">Ver o case do Instituto <span class="arr">→</span></a></div><div class="lift"><header><h3>Imobiliária</h3><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span></header><p>Lemi entende o que o cliente procura, Otto anota o perfil e o corretor recebe o contato.</p><a href="https://app.lemify.com.br/signup" class="tlink">Testar no meu negócio <span class="arr">→</span></a></div><div class="lift"><header><h3>Serviços e agências</h3><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F6FCBE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 34px; height: 34px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span></header><p>Lemi entende o objetivo do cliente, e Theo abre a negociação para o comercial.</p><a href="https://app.lemify.com.br/signup" class="tlink">Testar no meu negócio <span class="arr">→</span></a></div></div>
+<p style="margin: 0; text-align: center; color: #5F625B; font-size: 15px;">Outro segmento? O teste de 14 dias parte do modelo pronto mais próximo do seu.</p>
+</section>
+
+<section id="como-funciona" style="padding: 0 16px;">
+<div style="position: relative; overflow: hidden; max-width: 1408px; margin: 0 auto; background: #EEF3DC; border-radius: 40px;">
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 48px;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">Três passos, e os agentes <strong style="font-weight: 700;">começam a trabalhar na mesma hora</strong></h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+<div style="background: #F7F9F2; border-radius: 28px 28px 28px 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;"><span class="stepn">1</span><h3 style="margin: 6px 0 0; font-size: 18px; font-weight: 600;">Ensine os agentes sobre o seu negócio</h3><p style="margin: 0; color: #5F625B; font-size: 15px; max-width: 280px;">Use o modelo pronto do seu segmento e as informações do seu site.</p></div>
+<div style="background: #F7F9F2; border-radius: 28px 28px 28px 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;"><span class="stepn">2</span><h3 style="margin: 6px 0 0; font-size: 18px; font-weight: 600;">Conecte seus canais</h3><p style="margin: 0; color: #5F625B; font-size: 15px; max-width: 280px;">WhatsApp, Instagram, Facebook, <span style="white-space: nowrap;">e-mail</span>, Telegram e o chat do seu site, tudo numa caixa só.</p></div>
+<div style="background: #F7F9F2; border-radius: 28px 28px 28px 8px; padding: 32px 28px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;"><span class="stepn">3</span><h3 style="margin: 6px 0 0; font-size: 18px; font-weight: 600;">Os agentes começam a trabalhar</h3><p style="margin: 0; color: #5F625B; font-size: 15px; max-width: 280px;">Eles começam a responder, anotar e organizar. A equipe entra quando precisar.</p></div>
+</div>
+<div class="intg">
+<p class="intg-t">Conecta com os canais e os sistemas que você já usa</p>
+<div class="intg-rows">
+<div class="ir"><div class="ir-track r1"><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="WhatsApp Business" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="Instagram e Facebook (Meta)" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="TikTok" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span><span aria-hidden="true" style="display: contents;"><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span><span class="pl"><img src="/assets/9094c3e86ac8b864d5a00aefd32209b9.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0611a174fe3f06853e7178f76a6df68a.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6 2.2M21 4l-4 16-8-6.8M21 4L9 13.2V19l3-3.4"></path></svg>Telegram</span><span class="pl"><img src="/assets/427848b9eed3639c7c39b2ed06bfff32.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5l1.2-3.3A7.5 7.5 0 1 1 9 17.6z"></path></svg>Chat do site</span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="12" rx="3"></rect><path d="M8 21l3-4M8 10h8M8 13h5"></path></svg>SMS</span></span></div></div>
+<div class="ir"><div class="ir-track r2"><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="Mercado Livre" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="OLX" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="Gmail" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span><span aria-hidden="true" style="display: contents;"><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span><span class="pl"><img src="/assets/a4ef1199f0b4beed914b177eac8af344.webp" alt="" style="height: 26px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2.5"></rect><path d="M4 7l8 6 8-6"></path></svg>E-mail</span><span class="pl"><img src="/assets/20fa50eab4de078ed31bcf98f6d8b509.webp" alt="" style="height: 22px;"></span><span class="pl"><img src="/assets/3d462e25d298e30548cef7c83abbdf83.webp" alt="" style="height: 21px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2.5"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Google Agenda</span></span></div></div>
+<div class="ir"><div class="ir-track r3"><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="Bling" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="Tiny" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="Omie" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="Conta Azul" style="height: 16px;"></span><span aria-hidden="true" style="display: contents;"><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="" style="height: 16px;"></span><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="" style="height: 16px;"></span><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="" style="height: 16px;"></span><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="" style="height: 16px;"></span><span class="pl"><img src="/assets/52678d79709db130ada8d01f2425c2db.webp" alt="" style="height: 20px;"></span><span class="pl"><img src="/assets/0971679a3899ec619020d25b1ffeee9f.webp" alt="" style="height: 20px;"></span><span class="pl"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"></path></svg>Integração aberta (API)</span><span class="pl"><img src="/assets/1507d2ae629c91b8ac36a69db1a1474a.webp" alt="" style="height: 17px;"></span><span class="pl"><img src="/assets/8df3ebd1d44d2ec8930a392bc9d7a0de.webp" alt="" style="height: 16px;"></span></span></div></div>
+<span class="intg-orb"><img src="/assets/4264eb5acb140d91f11c77efaef75799.svg" alt="Lemify"></span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px;"><a href="https://app.lemify.com.br/signup" class="btn" style="background: #0B0C0A; color: #F7F9F2; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a><span style="font-size: 14px; color: #5F625B;">Sem cartão e sem falar com vendedor.</span></div>
+</div>
+</div>
+</section>
+
+<section id="por-dentro" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 24px 0; position: relative;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 auto 16px; text-align: center; max-width: 1000px;">Tudo o que a sua equipe usa, <strong style="font-weight: 700;">no mesmo lugar</strong></h2>
+<input type="radio" name="tb" id="tb1" class="agr" checked aria-label="Conversas"><input type="radio" name="tb" id="tb2" class="agr" aria-label="CRM"><input type="radio" name="tb" id="tb3" class="agr" aria-label="Agenda"><input type="radio" name="tb" id="tb4" class="agr" aria-label="Painel">
+<div class="tb-wrap">
+<div class="tb-tabs" role="tablist" aria-label="Telas do Lemify"><label for="tb1" class="tl1">Conversas</label><label for="tb2" class="tl2">CRM</label><label for="tb3" class="tl3">Agenda</label><label for="tb4" class="tl4">Painel</label></div>
+<div class="peek-host" style="position: relative;">
+<div style="position: relative; z-index: 1;"><div class="tb-p tp1"><div class="tb-txt" style="display: flex; flex-direction: column; gap: 14px;"><h3 style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;">Todas as conversas numa caixa só</h3><p style="margin: 0; color: #5F625B; font-size: 16px;">Todos os canais no mesmo lugar. Lemi responde, e a equipe assume com o resumo pronto.</p><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Setores e filas para cada equipe</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Resumo da conversa escrito pela IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Etapa e notas do cliente ao lado da conversa</span></li></ul></div><div class="tb-fr"><img src="/assets/21b36fe06b1e63aff9ccf6c7146dcebd.jpg" alt="Tela real do Lemify: caixa de conversas de vários canais, a conversa aberta e a ficha do cliente ao lado"></div></div><div class="tb-p tp2"><div class="tb-txt" style="display: flex; flex-direction: column; gap: 14px;"><h3 style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;">O funil que se organiza sozinho</h3><p style="margin: 0; color: #5F625B; font-size: 16px;">Theo cria e move cada negociação. Você só olha quem está perto de comprar.</p><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Funis com as etapas da sua empresa</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Data do próximo passo em cada negociação</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Valor somado por etapa</span></li></ul></div><div class="tb-fr"><img src="/assets/69fcbc0d144dfe2fff8660a36787c49e.webp" alt="Funil de vendas do Lemify com as etapas Em atendimento, Consulta agendada e Consulta realizada"></div></div><div class="tb-p tp3"><div class="tb-txt" style="display: flex; flex-direction: column; gap: 14px;"><h3 style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;">A agenda enche sem ninguém no telefone</h3><p style="margin: 0; color: #5F625B; font-size: 16px;">O que a Maia marca cai direto na agenda, por profissional e por unidade.</p><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Visão por dia, semana e mês</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Filtro por profissional e por unidade</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Confirmação e remarcação pela Maia</span></li></ul></div><div class="tb-fr"><img src="/assets/be3a151bd00a641934eef6681988946b.webp" alt="Agenda do Lemify na visão do mês, com a quantidade de agendamentos em cada dia"></div></div><div class="tb-p tp4"><div class="tb-txt" style="display: flex; flex-direction: column; gap: 14px;"><h3 style="margin: 0; font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em;">Saiba como está o atendimento e o que dá venda</h3><p style="margin: 0; color: #5F625B; font-size: 16px;">Tempo de resposta, fila, motivos de perda e desempenho da equipe, por período.</p><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Hoje, 7 dias, 30 dias ou o período que você escolher</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Motivos de ganho e de perda</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B0C0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Desempenho de cada pessoa da equipe</span></li></ul></div><div class="tb-fr"><img src="/assets/358a15581cdd76ea6dc80e39d73364f2.webp" alt="Painel de vendas do Lemify com negócios ativos, ganhos, perdas e o funil por etapa"></div></div></div>
+</div>
+</div>
+<p style="margin: 18px 0 0; text-align: center; font-size: 12px; color: #5F625B;">Telas reais do Lemify. Nomes e telefones de clientes foram ocultados.</p>
+</section>
+
+<section aria-label="Comparativo" style="padding: 0 16px;">
+<div style="position: relative; overflow: hidden; max-width: 1408px; margin: 0 auto; background: #0B0C0A; color: #F7F9F2; border-radius: 40px;">
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 56px;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<h2 style="margin: 0; text-align: center; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15;">O funcionário que <strong style="font-weight: 700; color: #F8FF99;">toda empresa queria ter</strong></h2>
+<p style="margin: 0 auto; text-align: center; font-size: 17px; color: #C3C6BD; max-width: 600px;">Não falta, não esquece e está sempre de bom humor. E deixa a sua equipe livre para quem vai comprar.</p>
+<div class="peek-host" style="position: relative; margin-top: 84px;">
+<div class="peek deco" style="right: 16px; top: -94px; width: 132px;" aria-hidden="true"><span class="bob "><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt=""></span></div>
+<div style="position: relative; z-index: 1; overflow-x: auto; border-radius: 24px; background: #1E221C;">
+<table style="width: 100%; min-width: 620px; border-collapse: collapse; font-size: 16px;">
+<thead><tr><th scope="col" style="text-align: left; padding: 18px 24px; font-size: 14px; color: #C3C6BD; font-weight: 600;"></th><th scope="col" style="text-align: left; padding: 18px 24px; font-size: 15px; font-weight: 700; color: #C3C6BD;">Mais um atendente</th><th scope="col" style="text-align: left; padding: 18px 24px; font-size: 15px; font-weight: 700; color: #F8FF99;">Agentes do Lemify</th></tr></thead>
+<tbody>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Clientes ao mesmo tempo</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Um de cada vez</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">Todos ao mesmo tempo</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Tempo de resposta</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Depende da fila</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">Em segundos</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Horário</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Comercial, com pausas e folgas</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">24 horas, 7 dias por semana</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Humor</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Depende do dia</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">O mesmo com todos os clientes</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Retorno para quem sumiu</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Quando sobra tempo</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">Automático para todos os contatos</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 600;">Custo</th><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #C3C6BD;">Salário, encargos e treinamento</td><td style="padding: 16px 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-weight: 700;">Mensalidade fixa, a partir de R$ 397</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: -8px;"><a href="https://app.lemify.com.br/signup" class="btn" style="background: #F8FF99; color: #0B0C0A; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a><span style="font-size: 14px; color: #C3C6BD;">Sem cartão e sem falar com vendedor.</span></div>
+</div>
+</div>
+</section>
+
+<section id="cases" aria-label="Cases de clientes" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 24px 0; display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">Mais de 2 mil empresas <strong style="font-weight: 700;">já atendem assim</strong></h2>
+</div>
+<div class="tband">
+<h3 class="disp" style="margin: 0; font-size: 26px; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em;">O tempo de resposta caiu de <span style="color: #5F625B; text-decoration: line-through; text-decoration-thickness: 2px; white-space: nowrap;">2 horas</span> para <strong style="font-weight: 700; white-space: nowrap;">10 segundos</strong></h3>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; flex-direction: column; gap: 8px;"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600;"><span>Antes</span><span style="color: #5F625B;">2 horas</span></span><span class="bar" style="background: #C9CCC2;"></span></div>
+<div style="display: flex; flex-direction: column; gap: 8px;"><span style="display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600;"><span>Com o Lemify</span><span>10 segundos</span></span><span class="bar" style="width: 18px; background: #0B0C0A;"></span></div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px;">
+<figure class="case lift" style="margin: 0; background: #FFFFFF; border: 1px solid #E2E4DC;">
+<span class="cl-logo"><img src="/assets/0572fa0274db3c0c559291e102b0ec92.png" alt="Espazzo Móveis Conceito" style="height: 36px;"></span>
+<span style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;"><strong class="disp" style="font-size: 52px; line-height: 1; font-weight: 700; letter-spacing: -0.03em;">100%</strong><span style="font-size: 15px; font-weight: 600;">de taxa de resposta</span></span>
+<blockquote>“A gente achava que a conversão baixa era culpa dos leads. Com o Lemify, centralizamos o atendimento, chegamos a 100% de taxa de resposta e hoje vemos onde o atendimento falhava.”</blockquote>
+<figcaption class="who"><strong>Espazzo Móveis Conceito</strong><span style="color: #5F625B;">Loja de móveis</span></figcaption>
+</figure>
+<figure class="case lift" style="margin: 0; background: #0B0C0A; color: #F7F9F2;">
+<span class="cl-logo"><img src="/assets/7c8f03dcfa1b6717587c941a4e17d132.png" alt="Instituto Guilherme Rocha" style="height: 30px;"></span>
+<strong class="disp" style="font-size: 26px; line-height: 1.2; font-weight: 600; color: #F8FF99;">A triagem acontece antes de chegar na recepção</strong>
+<blockquote style="color: #F7F9F2;">“Hoje a IA do Lemify faz a triagem antes de o contato chegar à recepção. E o painel mostra quantos contatos viram agendamento, o que orienta o nosso marketing.”</blockquote>
+<figcaption class="who"><strong>Instituto Guilherme Rocha</strong><span style="color: #C3C6BD;">Saúde</span></figcaption>
+</figure>
+</div>
+<div class="vids" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+<figure class="vid vreal" style="background: #0B0C0A;"><video src="/assets/698494a07a686d7a314a323303cd17d8.mp4" poster="/assets/9561b131aa4982c626321015d659debc.webp" controls playsinline preload="none" aria-label="Depoimento em vídeo de uma cliente do Lemify"></video></figure>
+<figure class="vid" style="background: linear-gradient(160deg, #E3EEF3, #C6DAE4);"><span class="play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" style="fill: #F8FF99;"></path></svg></span></figure>
+<figure class="vid" style="background: linear-gradient(160deg, #F6E6D7, #EACDB3);"><span class="play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" style="fill: #F8FF99;"></path></svg></span></figure>
+</div>
+</section>
+
+<section aria-label="Implantação e suporte" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 24px 0;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px 72px;">
+<div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 10px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 6px;">Duas dúvidas que <strong style="font-weight: 700;">quase todo mundo tem</strong></h2>
+<div class="qa"><h3>Vai dar trabalho para configurar?</h3><p>Não. Você parte de um modelo pronto do seu segmento e os agentes aprendem com o seu site. Se preferir, a nossa equipe configura com você por R$ 850.</p></div>
+<div class="qa"><h3>E se a IA responder errado?</h3><p>Você decide o que os agentes podem dizer e testa antes de liberar. A sua equipe assume qualquer conversa, quando quiser.</p></div>
+</div>
+<div style="flex: 1 1 400px; min-width: 0;">
+<div style="border-radius: 40px 200px 40px 200px; overflow: hidden; aspect-ratio: 5 / 4;">
+<img src="/assets/683e8ac062b9bcd977c0a80c25e1ce44.jpg" alt="Equipe reunida em volta de um notebook" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;">
+</div>
+</div>
+</div>
+</section>
+
+<section id="duvidas" style="max-width: 900px; margin: 0 auto; padding: clamp(64px, 8vw, 112px) 24px; display: flex; flex-direction: column; gap: 32px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; letter-spacing: -0.02em; text-align: center;">Dúvidas <strong style="font-weight: 700;">frequentes</strong></h2>
+<div style="display: flex; flex-direction: column;">
+<details class="faq" style="border-bottom: 1px solid #E2E4DC;" open>
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Quanto custa e posso cancelar?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
+<p style="margin: 0 0 22px; color: #5F625B;">Os planos vão de R$ 397 a R$ 897 por mês. O teste de 14 dias é grátis e sem cartão, e você cancela quando quiser.</p>
+</details>
+<details class="faq" style="border-bottom: 1px solid #E2E4DC;">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Posso ter vários atendentes, setores e números de WhatsApp?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
+<p style="margin: 0 0 22px; color: #5F625B;">Sim. Você cria setores, coloca um número em cada um e distribui os contatos entre a equipe, dentro do limite do seu plano.</p>
+</details>
+<details class="faq" style="border-bottom: 1px solid #E2E4DC;">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Meu número de WhatsApp corre risco de bloqueio?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
+<p style="margin: 0 0 22px; color: #5F625B;">O Lemify é parceiro oficial da Meta e usa a conexão oficial do WhatsApp, o que deixa o risco de bloqueio muito baixo.</p>
+</details>
+<details class="faq" style="border-bottom: 1px solid #E2E4DC;">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Funciona com o sistema que eu já uso?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
+<p style="margin: 0 0 22px; color: #5F625B;">Sim. Conecta com Tiny, Bling, Omie, Conta Azul e Google Agenda, e tem integração aberta (API) para outros sistemas.</p>
+</details>
+<details class="faq" style="border-bottom: 1px solid #E2E4DC;">
+<summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Tenho uma clínica. Assino o Lemify ou espero o LemiClinic?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
+<p style="margin: 0 0 22px; color: #5F625B;">Comece agora pelo plano Plus, que já agenda sozinho. Quando o LemiClinic for lançado, você recebe uma oferta para migrar.</p>
+</details>
+</div>
+</section>
+
+<section id="comecar" style="max-width: 1280px; margin: 0 auto; padding: 0 24px clamp(64px, 8vw, 104px);">
+<div style="position: relative; overflow: hidden; background: #0B0C0A; color: #F7F9F2; border-radius: 40px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+<div style="position: relative; flex: 1 1 460px; min-width: 0; padding: clamp(36px, 5vw, 72px); display: flex; flex-direction: column; gap: 18px;">
+<h2 style="margin: 0; font-weight: 500; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.025em;">Veja os agentes atendendo os seus clientes <strong style="font-weight: 700; color: #F8FF99;">antes de decidir</strong></h2>
+<p style="margin: 0; font-size: 17px; color: #C3C6BD; max-width: 460px;">14 dias grátis, sem cartão, com os seus clientes de verdade. Depois, a partir de R$ 397 por mês.</p>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px;">
+<a href="https://app.lemify.com.br/signup" class="btn" style="background: #F8FF99; color: #0B0C0A; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a>
+<span style="font-size: 14px; color: #C3C6BD;">Mais de 2 mil empresas já atendem com o Lemify.</span>
+</div>
+</div>
+<div style="position: relative; flex: 1 1 520px; min-width: 0; align-self: flex-end; display: flex; justify-content: center; padding: 24px clamp(16px, 3vw, 40px) 0;">
+<img src="/assets/8763d3e9c75074301cf9659d2bc10a27.webp" alt="A turma de agentes do Lemify reunida, em pé" style="width: 100%; max-width: 600px; height: auto; display: block; margin-bottom: -6px;">
+</div>
+</div>
+</section>
+
+<div class="stick"><a href="https://app.lemify.com.br/signup"><span class="ic"><img src="/assets/4264eb5acb140d91f11c77efaef75799.svg" alt="" style="width: 20px; height: auto; display: block;"></span><span>Testar grátis por 14 dias</span><small>sem cartão</small><span class="go" aria-hidden="true">→</span></a></div>
+
+<footer style="background: #EEF3DC; color: #0B0C0A; font-size: 14px; border-radius: 40px 40px 0 0;">
+<div style="max-width: 1280px; margin: 0 auto; padding: 40px 24px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px;"><img src="/assets/388e32f2047f602486606055c991ea8a.svg" alt="Lemify" style="height: 26px; width: auto; display: block;"><span style="color: #5F625B;">O Lemify é um produto da <a href="https://www.lemify.com.br/" class="tlink" style="font-weight: 700; text-decoration: none;">Lemify Digital Ltda.</a></span></div>
+<nav aria-label="Rodapé" style="display: flex; flex-wrap: wrap; gap: 8px 24px;"><a href="/planos" class="tlink" style="text-decoration: none;">Planos e preços</a><a href="#duvidas" class="tlink" style="text-decoration: none;">Dúvidas</a><a href="#topo" class="tlink" style="text-decoration: none;">Termos de uso</a><a href="#topo" class="tlink" style="text-decoration: none;">Privacidade</a></nav>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
