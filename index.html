@@ -773,6 +773,18 @@ html{scroll-behavior:smooth}
 @media (max-width:760px){#o-que-e,#agentes{scroll-margin-top:-52px}#funcionalidades,#planos,#cases,#duvidas,#por-dentro{scroll-margin-top:-44px}#configuracao{scroll-margin-top:8px}}
 /* seletores escondidos fixos na tela: clicar num agente ou numa aba não faz a página pular */
 .agr{position:fixed;top:50%;left:0}
+/* janela do vídeo */
+dialog.vmodal{width:min(1120px,calc(100vw - 48px));max-width:none;max-height:none;padding:0;border:0;background:transparent;overflow:visible;color:var(--cream)}
+dialog.vmodal::backdrop{background:rgba(14,36,33,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+dialog.vmodal[open]{animation:vmIn .28s cubic-bezier(.2,.7,.2,1) both}
+@keyframes vmIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.vm-box{position:relative;aspect-ratio:16 / 9;max-height:calc(100vh - 120px);margin:0 auto;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.vm-box video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+.vm-x{position:absolute;right:0;top:-58px;width:46px;height:46px;border-radius:50%;border:0;background:var(--cream);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.vm-x:hover{background:var(--lime)}
+.vm-x:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+html.vm-on{overflow:hidden}
+@media (max-width:760px){dialog.vmodal{width:calc(100vw - 16px)}.vm-box{border-radius:14px}.vm-x{top:-54px}}
 /* rodapé */
 footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-radius:40px 40px 0 0;margin-top:0}
 .ft-in{max-width:1280px;margin:0 auto;padding:64px 24px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:36px 40px}
@@ -816,7 +828,7 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 <h1 class="in d2" style="margin: 0; font-size: clamp(38px, 4.7vw, 68px); line-height: 1.02; letter-spacing: -0.035em; max-width: 980px;">Venda mais com as conversas <br><strong style="color: #D8FE6A;">que sua empresa já recebe.</strong></h1>
 <p class="in d3" style="margin: 0; font-size: 18px; color: #BCCDC7; max-width: 660px;">Atendimento, CRM e agentes de IA numa plataforma só, para a sua equipe responder na hora e acompanhar cada cliente em todos os canais.</p>
 <div class="in d4" style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 4px;">
-<div class="hero-ctas"><a href="https://app.lemify.com.br/signup" class="btn cta" style="background: #D8FE6A; color: #0E2421; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a><a href="#video" class="btn-ghost"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"></path></svg></i>Ver o Lemify em 2 min</a></div>
+<div class="hero-ctas"><a href="https://app.lemify.com.br/signup" class="btn cta" style="background: #D8FE6A; color: #0E2421; text-decoration: none; font-size: 17px; font-weight: 700; padding: 17px 30px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a><a href="#video" class="btn-ghost" data-vmodal aria-haspopup="dialog"><i><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"></path></svg></i>Ver o Lemify em 2 min</a></div>
 <span style="font-size: 14px; color: #BCCDC7;">Sem cartão e sem falar com vendedor.</span>
 
 </div>
@@ -1094,5 +1106,7 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 </div>
 <script>document.querySelectorAll(".vbox-f video").forEach(function(v){var f=v.parentNode;v.controls=false;f.classList.add("vjs");v.addEventListener("click",function(){if(!v.controls){v.controls=true;v.play();}});v.addEventListener("play",function(){v.controls=true;f.classList.add("on")});v.addEventListener("ended",function(){f.classList.remove("on")});});</script>
 <script>document.querySelectorAll(".ag-i").forEach(function(l){l.addEventListener("click",function(){setTimeout(function(){var t=l.getBoundingClientRect().top;if(t<8||t>innerHeight-120){window.scrollBy({top:t-16,behavior:"smooth"});}},80);});});</script>
+<dialog class="vmodal" id="vmodal" aria-label="Vídeo: o que é o Lemify, em 2 minutos"><button class="vm-x" type="button" aria-label="Fechar o vídeo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button><div class="vm-box"><video controls playsinline preload="none"></video></div></dialog>
+<script>(function(){var d=document.getElementById("vmodal");if(!d||!d.showModal)return;var mv=d.querySelector("video"),sv=document.querySelector("#video video");document.querySelectorAll("[data-vmodal]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();if(!mv.getAttribute("src")){mv.src=sv.currentSrc||sv.getAttribute("src");mv.poster=sv.getAttribute("poster")||"";}if(!sv.paused)sv.pause();d.showModal();document.documentElement.classList.add("vm-on");var pr=mv.play();if(pr&&pr.catch)pr.catch(function(){});});});d.querySelector(".vm-x").addEventListener("click",function(){d.close();});d.addEventListener("click",function(e){if(e.target===d)d.close();});d.addEventListener("close",function(){mv.pause();document.documentElement.classList.remove("vm-on");});})();</script>
 </body>
 </html>
