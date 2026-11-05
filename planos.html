@@ -46,6 +46,12 @@ a{color:#1C403B}a:hover{color:#68716B}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 @media (max-width: 760px){.deco{display:none}}
 
+/* âncoras */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+#planos{scroll-margin-top:24px}
+#duvidas{scroll-margin-top:calc(24px - clamp(64px,8vw,104px))}
+@media (max-width:760px){#planos{scroll-margin-top:16px}#duvidas{scroll-margin-top:-44px}}
 /* mensal/anual e Nano */
 .bill-r{position:fixed;left:0;top:50%;opacity:0;pointer-events:none;width:1px;height:1px;margin:0}
 .bwrap{position:relative;z-index:2;display:flex;justify-content:center;padding:clamp(28px,4vw,44px) 16px 0}

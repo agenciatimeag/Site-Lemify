@@ -764,6 +764,15 @@ h2 strong{font-weight:600 !important}
 .nano-v b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:30px;font-weight:600;letter-spacing:-.03em;color:var(--ink)}
 .nano-p a{font-weight:600;text-decoration:none;white-space:nowrap}
 @media (max-width:760px){.bill{align-self:flex-start}.nano{padding:18px;border-radius:22px}.nano-t{align-items:flex-start}}
+/* âncoras: o conteúdo de cada seção chega a 24px do topo (20px no celular) */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+#o-que-e,#agentes{scroll-margin-top:calc(24px - clamp(96px,11vw,160px))}
+#funcionalidades,#planos{scroll-margin-top:calc(24px - clamp(80px,9vw,128px))}
+#cases,#duvidas,#por-dentro,#configuracao{scroll-margin-top:calc(24px - clamp(64px,8vw,112px))}
+@media (max-width:760px){#o-que-e,#agentes{scroll-margin-top:-52px}#funcionalidades,#planos,#cases,#duvidas,#por-dentro{scroll-margin-top:-44px}#configuracao{scroll-margin-top:8px}}
+/* seletores escondidos fixos na tela: clicar num agente ou numa aba não faz a página pular */
+.agr{position:fixed;top:50%;left:0}
 /* rodapé */
 footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-radius:40px 40px 0 0;margin-top:0}
 .ft-in{max-width:1280px;margin:0 auto;padding:64px 24px 36px;display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:36px 40px}
@@ -1084,5 +1093,6 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 
 </div>
 <script>document.querySelectorAll(".vbox-f video").forEach(function(v){var f=v.parentNode;v.controls=false;f.classList.add("vjs");v.addEventListener("click",function(){if(!v.controls){v.controls=true;v.play();}});v.addEventListener("play",function(){v.controls=true;f.classList.add("on")});v.addEventListener("ended",function(){f.classList.remove("on")});});</script>
+<script>document.querySelectorAll(".ag-i").forEach(function(l){l.addEventListener("click",function(){setTimeout(function(){var t=l.getBoundingClientRect().top;if(t<8||t>innerHeight-120){window.scrollBy({top:t-16,behavior:"smooth"});}},80);});});</script>
 </body>
 </html>
