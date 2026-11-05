@@ -773,6 +773,12 @@ html{scroll-behavior:smooth}
 @media (max-width:760px){#o-que-e,#agentes{scroll-margin-top:-52px}#funcionalidades,#planos,#cases,#duvidas,#por-dentro{scroll-margin-top:-44px}#configuracao{scroll-margin-top:8px}}
 /* seletores escondidos fixos na tela: clicar num agente ou numa aba não faz a página pular */
 .agr{position:fixed;top:50%;left:0}
+/* planos da API */
+.p-all .pa-t,.p-all .pa-t span{display:inline}
+[data-plan][hidden]{display:none !important}
+.stack img[hidden]{display:none !important}
+.pc-ag .stack img{margin-left:0 !important}
+.pc-ag .stack img:not([hidden]) ~ img:not([hidden]){margin-left:-9px !important}
 /* janela do vídeo */
 dialog.vmodal{width:min(1120px,calc(100vw - 48px));max-width:none;max-height:none;padding:0;border:0;background:transparent;overflow:visible;color:var(--cream)}
 dialog.vmodal::backdrop{background:rgba(14,36,33,.86);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -1023,9 +1029,9 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 </div>
 <input type="radio" name="bill" id="bill-m" class="bill-r" checked aria-label="Preços mensais"><input type="radio" name="bill" id="bill-a" class="bill-r" aria-label="Preços do plano anual, com 30% de desconto">
 <div class="bill" aria-hidden="true"><label for="bill-m" class="bl-m">Mensal</label><label for="bill-a" class="bl-a">Anual <em>30% OFF</em></label></div>
-<div class="pg"><div class="pc"><h3>Start</h3><p class="pd">Para reunir o atendimento num lugar só, com IA que atende e agenda.</p><div class="pp"><small>R$</small><strong><span class="pm">397</span><span class="pa">277</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><span>Agentes de atendimento, agendamento e orçamentos</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>2 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 2 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 10.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>CRM com funis, agenda, e-mail e comentários das redes</span></li></ul></div><div class="pc ft"><span class="pc-b">Recomendado</span><h3>Plus</h3><p class="pd">Para equipes que querem vender mais com insights, campanhas e chat no site.</p><div class="pp"><small>R$</small><strong><span class="pm">497</span><span class="pa">347</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #1C403B;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #1C403B;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #1C403B;"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #1C403B;"></span><span>Agentes de atendimento, agendamento, orçamentos e insights</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>4 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 4 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 15.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Tudo do Start, mais chat interno, campanhas e chat no site</span></li></ul></div><div class="pc"><h3>Pro</h3><p class="pd">Para escalar o atendimento com automações, API e todos os agentes de IA.</p><div class="pp"><small>R$</small><strong><span class="pm">897</span><span class="pa">627</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><span>Os seis agentes de IA</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>15 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 15 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 50.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Tudo do Plus, mais Lemi Flow, API e resumo de conversas</span></li></ul></div></div>
-<div class="nano"><div class="nano-t"><span class="nano-k"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><p><strong>Não se encaixa em nenhum desses?</strong> O plano Nano é a alternativa para micro empresas: 1 canal, 1 usuário, 5.000 créditos de IA e o agente de atendimento, com agenda e orçamentos.</p></div><div class="nano-p"><span class="nano-v">R$ <b><span class="pm">97</span><span class="pa">67</span></b>/mês</span><a href="https://app.lemify.com.br/signup" class="tlink">Começar pelo Nano <span class="arr">→</span></a></div></div>
-<div class="p-all"><strong>Em todos os planos</strong><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Teste de 14 dias sem cartão</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>1 filial e até 1.000 atendimentos por mês</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Suporte pelo WhatsApp</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Dados protegidos pela LGPD</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Cancelamento quando quiser, depois de assinar</span></div>
+<div class="pg"><div class="pc" data-plan="START" data-list="sem-agentes"><h3>Start</h3><p class="pd">Para reunir o atendimento num lugar só, com IA que atende e agenda.</p><div class="pp"><small>R$</small><strong><span class="pm">397</span><span class="pa">277</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img data-agent="atendimento" src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="agendamento" src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="orcamentos" src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="insights" hidden src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="crm" hidden src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="enriquecimento" hidden src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><span data-f="agentes">Agentes de atendimento, agendamento e orçamentos</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>2 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 2 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 10.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>CRM com funis, agenda, e-mail e comentários das redes</span></li></ul></div><div class="pc ft" data-plan="PLUS" data-list="sem-agentes"><span class="pc-b">Recomendado</span><h3>Plus</h3><p class="pd">Para equipes que querem vender mais com insights, campanhas e chat no site.</p><div class="pp"><small>R$</small><strong><span class="pm">497</span><span class="pa">347</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img data-agent="atendimento" src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #1C403B;"><img data-agent="agendamento" src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #1C403B;"><img data-agent="orcamentos" src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #1C403B;"><img data-agent="insights" src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #1C403B;"><img data-agent="crm" hidden src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #1C403B;"><img data-agent="enriquecimento" hidden src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #1C403B;"></span><span data-f="agentes">Agentes de atendimento, agendamento, orçamentos e insights</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>4 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 4 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 15.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Tudo do Start, mais orçamentos, chat interno, campanhas e chat no site</span></li></ul></div><div class="pc" data-plan="PRO" data-list="sem-agentes"><h3>Pro</h3><p class="pd">Para escalar o atendimento com automações, API e todos os agentes de IA.</p><div class="pp"><small>R$</small><strong><span class="pm">897</span><span class="pa">627</span></strong><span>/mês</span></div><span class="pa-n">no plano anual, com 30% de desconto</span><a href="https://app.lemify.com.br/signup" class="btn pc-cta">Testar grátis por 14 dias <span class="arr">→</span></a><div class="pc-ag"><span class="stack"><img data-agent="atendimento" src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="agendamento" src="/assets/9588b6492fbcd05850e3b69009e61e4c.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #D8E7EF; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="orcamentos" src="/assets/939caed0768f159b15d48b7b63e34717.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F3DCC7; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="insights" src="/assets/ae93dbf37bf1171471288127cbe3828e.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #E4DDEB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="crm" src="/assets/bfcd2809ec95079e6151f8d7d08579fa.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #CAD9C2; display: block; box-shadow: 0 0 0 3px #FFFFFF;"><img data-agent="enriquecimento" src="/assets/81be5ebfeade9f0dc8be40ce139c5d29.webp" alt="" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F0DADE; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><span data-f="agentes">Os seis agentes de IA</span></div><ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>15 canais de atendimento</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 15 usuários simultâneos</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Até 50.000 créditos de IA</span></li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span>Tudo do Plus, mais Lemi Flow, API e resumo de conversas</span></li></ul></div></div>
+<div class="nano" data-plan="NANO"><div class="nano-t"><span class="nano-k"><img src="/assets/4288c321bd4e7cfab256b2c142fe2804.webp" alt="" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; background: #F1FECB; display: block; box-shadow: 0 0 0 3px #FFFFFF;"></span><p><strong>Não se encaixa em nenhum desses?</strong> O plano Nano é a alternativa para micro empresas: <span data-f="nano">1 canal, 1 usuário, 5.000 créditos de IA e o agente de atendimento, com agenda e orçamentos.</span></p></div><div class="nano-p"><span class="nano-v">R$ <b><span class="pm">97</span><span class="pa">67</span></b>/mês</span><a href="https://app.lemify.com.br/signup" class="tlink">Começar pelo Nano <span class="arr">→</span></a></div></div>
+<div class="p-all"><strong>Em todos os planos</strong><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Teste de 14 dias sem cartão</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg><span class="pa-t"><span data-plans-branches>1 filial</span> e até 1.000 atendimentos por mês</span></span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Suporte pelo WhatsApp</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Dados protegidos pela LGPD</span><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C403B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Cancelamento quando quiser, depois de assinar</span></div>
 <div class="p-impl"><div><strong>Implantação guiada, opcional · R$ 850</strong><p>A nossa equipe configura o Lemify com você, treina a sua equipe e acompanha o primeiro mês. Se preferir, você configura por conta própria.</p></div><a href="/planos" class="tlink">Comparar os planos lado a lado <span class="arr">→</span></a></div>
 </section>
 
@@ -1046,7 +1052,7 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 </details>
 <details class="faq" style="border-bottom: 1px solid #E1E4DA;">
 <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Quantas pessoas da equipe podem usar?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
-<p style="margin: 0 0 22px; color: #56635F;">Depende do plano: 1 usuário no Nano, até 2 no Start, 4 no Plus e 15 no Pro. Se a sua operação precisar de mais, fale com a gente.</p>
+<p style="margin: 0 0 22px; color: #56635F;">Depende do plano: <span data-plans-users>1 usuário no Nano, até 2 no Start, 4 no Plus e 15 no Pro</span>. Se a sua operação precisar de mais, fale com a gente.</p>
 </details>
 <details class="faq" style="border-bottom: 1px solid #E1E4DA;">
 <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Como eu controlo o que a IA responde?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
@@ -1062,7 +1068,7 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 </details>
 <details class="faq" style="border-bottom: 1px solid #E1E4DA;">
 <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">Quais recursos estão no meu plano?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
-<p style="margin: 0 0 22px; color: #56635F;">Todos os planos têm a caixa única com os seus canais e o agente de atendimento. A partir do Start entram os agentes de agendamento e de orçamentos, o CRM com funis e o e-mail. O Plus soma o agente de insights, o chat interno, as campanhas e o chat no site. O Pro libera os seis agentes, o Lemi Flow e a API. <a href="/planos" class="tlink" style="font-weight: 700; text-decoration: none; color: #0E2421; white-space: nowrap;">Comparar os planos <span class="arr">→</span></a></p>
+<p style="margin: 0 0 22px; color: #56635F;">Todos os planos têm a caixa única com os seus canais e o agente de atendimento. Os outros agentes, os limites e os recursos aumentam de um plano para o outro, e a comparação mostra tudo lado a lado. <a href="/planos" class="tlink" style="font-weight: 700; text-decoration: none; color: #0E2421; white-space: nowrap;">Comparar os planos <span class="arr">→</span></a></p>
 </details>
 <details class="faq" style="border-bottom: 1px solid #E1E4DA;">
 <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; font-size: 17px; font-weight: 600;">O que acontece quando os créditos de IA acabam?<span class="plus" aria-hidden="true" style="font-size: 26px; font-weight: 400; line-height: 1;">+</span></summary>
@@ -1080,7 +1086,7 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 <div class="fin-in">
 <span class="eyebrow">Comece hoje</span>
 <h2 style="margin: 0;">Teste o Lemify na rotina da sua empresa</h2>
-<p>14 dias grátis, sem cartão. Depois, planos a partir de R$ 97 por mês, e você cancela quando quiser.</p>
+<p>14 dias grátis, sem cartão. Depois, planos a partir de R$ <span data-plans-min>97</span> por mês, e você cancela quando quiser.</p>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
 <a href="https://app.lemify.com.br/signup" class="btn cta" style="background: #D8FE6A; color: #0E2421; text-decoration: none; font-size: 17px; font-weight: 600; padding: 17px 32px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px;">Testar grátis por 14 dias <span class="arr">→</span></a>
 <span style="font-size: 14px; color: #BCCDC7;">Mais de 2 mil empresas já atendem com o Lemify.</span>
@@ -1108,5 +1114,168 @@ footer.ft{background:var(--brand);color:var(--cream);font-size:14.5px;border-rad
 <script>document.querySelectorAll(".ag-i").forEach(function(l){l.addEventListener("click",function(){setTimeout(function(){var t=l.getBoundingClientRect().top;if(t<8||t>innerHeight-120){window.scrollBy({top:t-16,behavior:"smooth"});}},80);});});</script>
 <dialog class="vmodal" id="vmodal" aria-label="Vídeo: o que é o Lemify, em 2 minutos"><button class="vm-x" type="button" aria-label="Fechar o vídeo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"></path></svg></button><div class="vm-box"><video controls playsinline preload="none"></video></div></dialog>
 <script>(function(){var d=document.getElementById("vmodal");if(!d||!d.showModal)return;var mv=d.querySelector("video"),sv=document.querySelector("#video video");document.querySelectorAll("[data-vmodal]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();if(!mv.getAttribute("src")){mv.src=sv.currentSrc||sv.getAttribute("src");mv.poster=sv.getAttribute("poster")||"";}if(!sv.paused)sv.pause();d.showModal();document.documentElement.classList.add("vm-on");var pr=mv.play();if(pr&&pr.catch)pr.catch(function(){});});});d.querySelector(".vm-x").addEventListener("click",function(){d.close();});d.addEventListener("click",function(e){if(e.target===d)d.close();});d.addEventListener("close",function(){mv.pause();document.documentElement.classList.remove("vm-on");});})();</script>
+<script>/* Planos do Lemify lidos da API (https://api.lemify.com.br/v1/plans).
+   A página já vem com os valores escritos; este script troca pelos da API
+   quando ela responde. Se a API falhar, nada muda na tela. */
+(function () {
+  var API = 'https://api.lemify.com.br/v1/plans';
+  var KEY = 'lemify-plans-v1', TTL = 15 * 60 * 1000;
+  var FEATURED = 'PLUS';          // plano com o selo "Recomendado"
+  var ATENDIMENTOS = '1.000';     // não vem na API; igual em todos os planos
+  var AGENTS = [
+    ['useLemiAI', 'atendimento', 'atendimento'],
+    ['useSpecialistAgenda', 'agendamento', 'agendamento'],
+    ['useBudgets', 'orçamentos', 'orcamentos'],
+    ['useAgentInsights', 'insights', 'insights'],
+    ['useSpecialistCrm', 'CRM', 'crm'],
+    ['useSpecialistEnrich', 'enriquecimento', 'enriquecimento']
+  ];
+  var MODS = [
+    ['usePipelines', 'CRM com funis'], ['useAgenda', 'agenda'], ['useBudgetsModule', 'orçamentos'],
+    ['useEmail', 'e-mail'], ['useInteractions', 'comentários das redes'], ['useInternalchat', 'chat interno'],
+    ['useCampaigns', 'campanhas'], ['useWebchat', 'chat no site'], ['useLemiflow', 'Lemi Flow'],
+    ['useApi', 'API'], ['useSpecialistSummary', 'resumo de conversas']
+  ];
+
+  function lst(a) { return a.length < 2 ? (a[0] || '') : a.slice(0, -1).join(', ') + ' e ' + a[a.length - 1]; }
+  function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
+  function num(n) { return Number(n).toLocaleString('pt-BR'); }
+  function money(v) { return v % 1 === 0 ? String(v) : v.toFixed(2).replace('.', ','); }
+  function annual(v) { return Math.floor(v * 0.7); }      // anual com 30% de desconto, como no sistema
+  function title(n) { return n.charAt(0) + n.slice(1).toLowerCase(); }
+  function agentsOf(p) { return AGENTS.filter(function (a) { return p[a[0]]; }); }
+  function modsOf(p) { return MODS.filter(function (m) { return p[m[0]]; }).map(function (m) { return m[1]; }); }
+  function credits(p) { return num(p.aiBudget * 1000); }
+
+  var T = {
+    canais: function (p) { return p.connections === 1 ? '1 canal de atendimento' : p.connections + ' canais de atendimento'; },
+    usuarios: function (p) { return p.users === 1 ? 'Até 1 usuário' : 'Até ' + p.users + ' usuários simultâneos'; },
+    creditos: function (p) { return 'Até ' + credits(p) + ' créditos de IA'; },
+    agentes: function (p) {
+      var a = agentsOf(p).map(function (x) { return x[1]; });
+      if (a.length === AGENTS.length) return 'Os seis agentes de IA';
+      return (a.length === 1 ? 'Agente de ' : 'Agentes de ') + lst(a);
+    },
+    recursos: function (p, prev) {
+      var m = modsOf(p);
+      if (prev) {
+        var pm = modsOf(prev);
+        if (pm.length && pm.every(function (x) { return m.indexOf(x) >= 0; })) {
+          var d = m.filter(function (x) { return pm.indexOf(x) < 0; });
+          if (d.length) return 'Tudo do ' + title(prev.name) + ', mais ' + lst(d);
+        }
+      }
+      return cap(lst(m));
+    },
+    nano: function (p) {
+      var a = agentsOf(p).map(function (x) { return x[1]; }), m = modsOf(p);
+      return (p.connections === 1 ? '1 canal' : p.connections + ' canais') + ', ' +
+        (p.users === 1 ? '1 usuário' : p.users + ' usuários') + ', ' + credits(p) + ' créditos de IA e ' +
+        (a.length === 1 ? 'o agente de ' : 'os agentes de ') + lst(a) + (m.length ? ', com ' + lst(m) : '') + '.';
+    },
+    usuariosFaq: function (plans) {
+      return lst(plans.map(function (p, i) {
+        if (i === 0) return p.users + (p.users === 1 ? ' usuário' : ' usuários') + ' no ' + title(p.name);
+        return (i === 1 ? 'até ' : '') + p.users + ' no ' + title(p.name);
+      }));
+    }
+  };
+
+  function setList(ul, items) {
+    var tpl = ul && ul.querySelector('li');
+    if (!tpl) return;
+    var out = items.map(function (t) {
+      var li = tpl.cloneNode(true), sp = li.querySelector('span');
+      if (sp) sp.textContent = t;
+      else { Array.prototype.slice.call(li.childNodes).forEach(function (n) { if (n.nodeType === 3) n.remove(); }); li.appendChild(document.createTextNode(t)); }
+      return li;
+    });
+    ul.textContent = '';
+    out.forEach(function (li) { ul.appendChild(li); });
+  }
+  function setPrice(root, p) {
+    var pm = root.querySelector('.pm'), pa = root.querySelector('.pa');
+    if (pm) pm.textContent = money(p.value);
+    if (pa) pa.textContent = String(annual(p.value));
+  }
+  function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
+
+  function tableHTML(plans) {
+    var yes = '<span aria-hidden="true">✓</span><span class="sr">Incluído</span>';
+    var no = '<span aria-hidden="true" class="no">–</span><span class="sr">Não incluído</span>';
+    function row(label, f) {
+      return '<tr><th scope="row">' + label + '</th>' + plans.map(function (p) {
+        var v = f(p); return '<td' + (p.name === FEATURED ? ' class="hl"' : '') + '>' + (v === true ? yes : v === false ? no : v) + '</td>';
+      }).join('') + '</tr>';
+    }
+    function group(label) { return '<tr class="grp"><th scope="rowgroup" colspan="' + (plans.length + 1) + '">' + label + '</th></tr>'; }
+    var h = '<thead><tr><th scope="col">Recurso</th>' + plans.map(function (p) { return '<th scope="col"' + (p.name === FEATURED ? ' class="hl"' : '') + '>' + title(p.name) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    h += row('Preço por mês', function (p) { return 'R$ ' + money(p.value); });
+    h += row('No plano anual, por mês', function (p) { return 'R$ ' + annual(p.value); });
+    h += row('Canais de atendimento', function (p) { return String(p.connections); });
+    h += row('Usuários simultâneos', function (p) { return String(p.users); });
+    h += row('Filiais', function (p) { return String(p.branches); });
+    h += row('Atendimentos por mês', function () { return ATENDIMENTOS; });
+    h += row('Créditos de IA', function (p) { return credits(p); });
+    h += group('Agentes de IA');
+    AGENTS.forEach(function (a) { h += row(cap(a[1]), function (p) { return !!p[a[0]]; }); });
+    h += group('Recursos');
+    MODS.forEach(function (m) { h += row(cap(m[1]), function (p) { return !!p[m[0]]; }); });
+    return h + '</tbody>';
+  }
+
+  function render(all) {
+    var plans = all.filter(function (p) { return p && p.active !== false && typeof p.name === 'string' && isFinite(p.value) && p.value > 0; })
+      .sort(function (a, b) { return a.value - b.value; });
+    if (!plans.length) return;
+    var by = {}; plans.forEach(function (p, i) { by[p.name] = { p: p, prev: plans[i - 1] }; });
+
+    each('[data-plan]', function (el) {
+      var e = by[el.getAttribute('data-plan')];
+      var card = el.closest('.pg2 > *') || el;
+      if (!e) { if (el.matches('.pc, article, .nano')) card.hidden = true; return; }
+      card.hidden = false;
+      var p = e.p;
+      setPrice(el, p);
+      var h = el.querySelector('h2, h3'); if (h && !el.classList.contains('nano')) h.textContent = title(p.name);
+      var kind = el.getAttribute('data-list');
+      var items = [T.canais(p), T.usuarios(p), T.creditos(p)];
+      if (kind === 'com-agentes') items.push(T.agentes(p));
+      items.push(T.recursos(p, e.prev));
+      if (kind) setList(el.querySelector('ul'), items);
+      var ag = el.querySelector('[data-f="agentes"]'); if (ag) ag.textContent = T.agentes(p);
+      each('[data-plan="' + p.name + '"] [data-agent]', function (img) {
+        var a = AGENTS.filter(function (x) { return x[2] === img.getAttribute('data-agent'); })[0];
+        img.hidden = !(a && p[a[0]]);
+      });
+      var nd = el.querySelector('[data-f="nano"]'); if (nd) nd.textContent = T.nano(p);
+    });
+    each('[data-plans-min]', function (el) { el.textContent = money(plans[0].value); });
+    each('[data-plans-users]', function (el) { el.textContent = T.usuariosFaq(plans); });
+    each('[data-plans-branches]', function (el) {
+      var b = plans[0].branches, same = plans.every(function (p) { return p.branches === b; });
+      el.textContent = same ? (b === 1 ? '1 filial' : b + ' filiais') : 'Filiais conforme o plano';
+    });
+    each('table[data-plans-table]', function (t) { t.innerHTML = tableHTML(plans); });
+  }
+
+  function load() {
+    try {
+      var c = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+      if (c && Date.now() - c.t < TTL && Array.isArray(c.d)) { render(c.d); return; }
+    } catch (e) {}
+    var ctl = window.AbortController ? new AbortController() : null;
+    var timer = ctl && setTimeout(function () { ctl.abort(); }, 10000);
+    fetch(API, ctl ? { signal: ctl.signal } : {}).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (timer) clearTimeout(timer);
+      if (!Array.isArray(d)) return;
+      render(d);
+      try { sessionStorage.setItem(KEY, JSON.stringify({ t: Date.now(), d: d })); } catch (e) {}
+    }).catch(function () {});
+  }
+  window.LemifyPlans = { render: render };
+  if (document.querySelector('[data-plan], [data-plans-table]')) { try { load(); } catch (e) {} }
+})();
+</script>
 </body>
 </html>
